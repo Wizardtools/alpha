@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.gstatic.com" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+
+   
+
+    <title>WIZARD tools </title>
+    <link rel="icon" href="LOGOW3.png" type="image/png">
+    
+   
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="titulo-primero">wizard tools CEOs and executives</h1>
+            
+            <nav>
+                <ul>
+                    <li><a href="#join">characteristics</a></li>
+                    <li><a href="http://127.0.0.1:5503/index.html">join us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Boost your business success with our advanced tools.</h2>
+            <a href="#join" class="btn">Register now</a>
+        </div>
+    </section>
+                      
+    <!--INVENTARY-->
+    <div class="container-3">
+        <h1 class="title2">Products Inventory</h1>
+        <button id="toggleButton">Show</button>
+        <div id="content" style="display: none;">
+          
+        <form id="productForm">
+            <input type="text" id="productName" placeholder="product" style="width: 200px; height: 30px; padding: 5px;" required>
+            <input type="number" id="productQuantity" placeholder="amount" style="width: 100px; height: 30px; padding: 5px;" required>
+            <input type="text" id="productValue" placeholder="Unit value" style="width: 150px; height: 30px; padding: 5px;" required>
+            <button type="submit">add product</button>
+        </form>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>product</th>
+                    <th>amount</th>
+                    <th>Unit value</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryBody">
+                <!-- Los productos se añadirán aquí dinámicamente -->
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+    var content = document.getElementById('content');
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+    } else {
+        content.style.display = 'none';
+    }
+});
+
+    </script>
+
+    <!--ESTRATEGY-->
+    
+    
+    <section id="features">
+        <div class="container">
+            <h2>Características Principales</h2>
+            <div class="feature">
+                <h3>Sales record</h3>
+
+                 <!-- Agregar botón y contenido a mostrar/ocultar -->
+                 <button id="toggleAnalyticsContent" class="toggle-button">Show Graph</button>
+
+                 <div id="analyticsContent" class="hidden">
+                     <canvas id="myChart"></canvas>
+
+                  <!--CONTENIDO-->
+                  <div class="container-1">
+                    <h1>Análisis de Ventas</h1>
+                   
+                    <div class="inputs-container">
+                        <div class="input-group">
+                            <label for="january">January:</label>
+                            <input type="number" id="january" value="500">
+                        </div>
+                        <div class="input-group">
+                            <label for="february">February:</label>
+                            <input type="number" id="february" value="800">
+                        </div>
+                        <div class="input-group">
+                            <label for="march">March:</label>
+                            <input type="number" id="march" value="600">
+                        </div>
+                        <div class="input-group">
+                            <label for="april">April:</label>
+                            <input type="number" id="april" value="700">
+                        </div>
+                        <div class="input-group">
+                            <label for="may">May:</label>
+                            <input type="number" id="may" value="900">
+                        </div>
+                        <div class="input-group">
+                            <label for="june">June:</label>
+                            <input type="number" id="june" value="1000">
+                        </div>
+                        <div class="input-group">
+                            <label for="july">July:</label>
+                            <input type="number" id="july" value="1200">
+                        </div>
+                        <div class="input-group">
+                            <label for="august">August:</label>
+                            <input type="number" id="august" value="1100">
+                        </div>
+                        <div class="input-group">
+                            <label for="september">September:</label>
+                            <input type="number" id="september" value="1000">
+                        </div>
+                        <div class="input-group">
+                            <label for="october">October:</label>
+                            <input type="number" id="october" value="950">
+                        </div>
+                        <div class="input-group">
+                            <label for="november">November:</label>
+                            <input type="number" id="november" value="850">
+                        </div>
+                        <div class="input-group">
+                            <label for="december">December:</label>
+                            <input type="number" id="december" value="700">
+                        </div>
+                    </div>
+                    <button class="change-chart-btn" onclick="toggleChartType()">Switch to Bar Chart</button>
+                    <button class="update-chart-btn" onclick="updateChart()">Update</button>
+                </div>
+            
+                <script>
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    let myChart;
+            
+                    function updateChart() {
+                        if (myChart) myChart.destroy(); // Destruye el gráfico anterior si existe
+            
+                        const january = parseInt(document.getElementById('january').value);
+                        const february = parseInt(document.getElementById('february').value);
+                        const march = parseInt(document.getElementById('march').value);
+                        const april = parseInt(document.getElementById('april').value);
+                        const may = parseInt(document.getElementById('may').value);
+                        const june = parseInt(document.getElementById('june').value);
+                        const july = parseInt(document.getElementById('july').value);
+                        const august = parseInt(document.getElementById('august').value);
+                        const september = parseInt(document.getElementById('september').value);
+                        const october = parseInt(document.getElementById('october').value);
+                        const november = parseInt(document.getElementById('november').value);
+                        const december = parseInt(document.getElementById('december').value);
+            
+                        myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                    labels: ['January', 'February', 'March', 'April', 'May ', 'June', 'July', 'August', 'September ', 'October', 'November', 'December'],
+                    datasets: [{
+                        label: 'sales',
+                        data: [january, february, march, april, may, june, july, august, september, october, november, december],
+                        backgroundColor: [
+                            '#9900ff',
+                            '#7b008e',
+                            '#5d0073',
+                            '#450052',
+                            '#2e0038',
+                            '#18001f',
+                            '#9900ff',
+                            '#7b008e',
+                            '#5d0073',
+                            '#450052',
+                            '#2e0038',
+                            '#18001f'
+                        ]
+                    }]
+                },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    }
+            
+                    function toggleChartType() {
+                        if (myChart.config.type === 'line') {
+                            myChart.config.type = 'bar';
+                            document.querySelector('.change-chart-btn').textContent = 'Switch to Line Chart';
+                        } else {
+                            myChart.config.type = 'line';
+                            document.querySelector('.change-chart-btn').textContent = 'Switch to Bar Chart';
+                        }
+                        myChart.update();
+                    }
+            
+                    // Inicialmente, se muestra el gráfico con los valores predeterminados
+                    updateChart();
+                </script>
+
+
+
+                <p>Obtenga información clave sobre el rendimiento de su empresa con nuestras herramientas de análisis avanzado.</p>
+            </div>
+            <div class="feature">
+                <h3>Project management</h3>
+                <p>Monitor and coordinate projects efficiently with our intuitive project management tools.</p>
+                <!-- Agregar botón y contenido a mostrar/ocultar -->
+                <button id="toggleProjectContent" class="toggle-button">show me</button>
+
+                <div id="projectContent" class="hidden">
+
+                    <div id="app">
+                        <div id="noteContainer">
+                            <input type="text" id="noteInput" placeholder="write a note here...">
+                            <input type="datetime-local" id="reminderInput">
+                            <button onclick="addNote()">add note</button>
+                        </div>
+                
+                        <div id="notesList"></div>
+                
+                        <h2>Productivity Widgets</h2>
+                        <div id="productivityWidgets">
+                            <div id="timerWidget">
+                                <h3>Time Counter</h3>
+                                <button onclick="startTimer()">Start</button>
+                                <button onclick="stopTimer()">Stop</button>
+                                <p id="timerDisplay">00:00:00</p>
+                
+                            </div>
+                            <div id="pomodoroWidget">
+                                <h3>pomodoro planner</h3>
+                                <button onclick="startPomodoro()">Start Pomodoro</button>
+                                <button onclick="startBreak()">Start break</button>
+                                <p id="pomodoroDisplay">25:00</p>
+                
+                
+                            </div>
+                            <div id="wordCountWidget">
+                                <h3>Word Counter</h3>
+                                <textarea id="textArea" placeholder="Start writing here..."></textarea>
+                                <div id="wordCount">Word count: 0</div>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="dailyProgressWidget" style="text-align: center; padding: 20px;">
+                        <h3>Daily Progress Widget</h3>
+                
+                        <div class="widget-container">
+                            <h2>Main Task of the Day</h2>
+                            <input type="text" id="mainTask" placeholder="Write your main task here...">
+                            <button id="saveTask">Save Task</button>
+                            
+                            <h3>Today's Task:</h3>
+                            <p id="todayTask">No task defined.</p>
+                    
+                            <h2>phrase of the day</h2>
+                            <p id="dailyQuote">"Loading phrase..."</p>
+                
+                             <!-- Meta del día -->
+                        <div>
+                            <input type="text" id="goalInput" placeholder="Enter your goal for the day">
+                            <button id="setGoalButton">Set Goal</button>
+                        </div>
+                        
+                        <!-- Mostrar la meta actual -->
+                        <h3>Goal of the Day: <span id="goalDisplay">Define your goal for the day</span></h3>
+                        
+                        <!-- Registro de progreso -->
+                        <div>
+                            <input type="range" id="progressInput" min="0" max="100" value="0">
+                            <p>progress: <span id="progressDisplay">0%</span></p>
+                        </div>
+                        
+                        <!-- Mensaje motivacional -->
+                        <p id="motivationalMessage">Set a goal to start.</p>
+                    </div>
+                
+                        </div>
+                
+                    <script src="script.js"></script>
+                    <p>Aquí puede agregar más detalles sobre la gestión de proyectos si lo desea.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <!-- Botón para mostrar y ocultar el gráfico -->
+                <h2 class="titulo-segundo">Risk analysis</h2>
+    <button id="toggleChartBtn" onclick="toggleChart()">Double click</button>
+                <div id="chartContainer" class="hidden"> <!-- Contenedor para el gráfico y los controles, inicialmente oculto -->
+                    <section id="riesgos">
+                        
+                        <canvas id="riskChart"></canvas>
+                        <div>
+                            <!-- Inputs y botón para actualizar el gráfico de riesgos -->
+                            <label for="newValueRisk1">Risk 1:</label>
+                            <input type="number" id="newValueRisk1" placeholder="value">
+                            <br>
+                            <label for="newValueRisk2">Risk 2:</label>
+                            <input type="number" id="newValueRisk2" placeholder="value">
+                            <br>
+                            <label for="newValueRisk3">Risk 3:</label>
+                            <input type="number" id="newValueRisk3" placeholder="value">
+                            <br>
+                            <label for="newValueRisk4">Risk 4:</label>
+                            <input type="number" id="newValueRisk4" placeholder="value">
+                            <br>
+                            <label for="newValueRisk5">Risk 5:</label>
+                            <input type="number" id="newValueRisk5" placeholder="value">
+                            <br>
+                            <button class="btn" id="updateBtn">Update</button>
+                        </div>
+                    </section>
+                
+                    <!-- Script para manejar el gráfico de riesgos y su actualización -->
+                    <script>
+                        // Asegúrate de que el script se ejecute después de que la página se haya cargado completamente
+    
+                        // Función para mostrar u ocultar el gráfico
+            function toggleChart() {
+                const chartContainer = document.getElementById('chartContainer');
+                const toggleChartBtn = document.getElementById('toggleChartBtn');
+      // Alternar entre mostrar y ocultar el contenedor del gráfico
+      if (chartContainer.style.display === 'none') {
+                    chartContainer.style.display = 'block';
+                    toggleChartBtn.textContent = 'Hide Chart';
+                } else {
+                    chartContainer.style.display = 'none';
+                    toggleChartBtn.textContent = 'Show Chart';
+                }
+              
+            }
+    
+                        
+       
+            document.addEventListener('DOMContentLoaded', function () {
+                const ctx = document.getElementById('riskChart').getContext('2d');
+    
+                // Función para obtener datos de ejemplo
+                function obtenerDatos() {
+                    return {
+                        labels: ['Risk 1', 'Risk 2', 'Risk 3', 'Risk 4', 'Risk 5'],
+                        datasets: [{
+                            label: 'Risk level',
+                            data: [10, 20, 30, 40, 50],
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)', // Color de fondo
+                            borderColor: 'rgb(255, 99, 132)', // Color del borde
+                            borderWidth: 1
+                        }]
+                    };
+                }
+    
+                // Opciones del gráfico
+                const options = {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+    
+                // Crear el gráfico de barras
+                const riskChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: obtenerDatos(),
+                    options: options
+                });
+    
+                // Función para actualizar los datos del gráfico
+                document.getElementById('updateBtn').addEventListener('click', function () {
+                    const newData = [
+                        parseInt(document.getElementById('newValueRisk1').value),
+                        parseInt(document.getElementById('newValueRisk2').value),
+                        parseInt(document.getElementById('newValueRisk3').value),
+                        parseInt(document.getElementById('newValueRisk4').value),
+                        parseInt(document.getElementById('newValueRisk5').value)
+                    ];
+    
+                    for (let i = 0; i < newData.length; i++) {
+                        if (isNaN(newData[i])) {
+                            alert('Por favor, ingrese valores numéricos para todos los riesgos.');
+                            return;
+                        }
+                    }
+    
+                    riskChart.data.datasets[0].data = newData;
+                    riskChart.update();
+                });
+            });
+        
+                    </script>
+                                   <div class="h1-3">
+                                  
+                                    
+                                   </div>
+                    
+                
+                    <!-- Sección para calcular el margen de ganancia -->
+                    <h2>Calculate Profit Margin</h2>
+                    <label for="cost">Cost:</label>
+                    <input type="number" id="cost">
+                    <label for="revenue">Revenue:</label>
+                    <input type="number" id="revenue">
+                    <button onclick="calcularMargenDeGanancia()">Calculate</button>
+                    <p id="profitMargin"></p>
+                
+                    <!-- Sección para calcular ratios financieros clave -->
+                    <h2>Calculate Key Financial Ratios</h2>
+                    <label for="assets">Total Assets:</label>
+                    <input type="number" id="assets">
+                    <label for="liabilities">Total Liabilities:</label>
+                    <input type="number" id="liabilities">
+                    <label for="equity">Net Worth:</label>
+                    <input type="number" id="equity">
+                    <button onclick="calcularRatiosFinancieros()">Calculate</button>
+                    <p id="debtRatio"></p>
+                    <p id="equityRatio"></p>
+                
+                    <!-- Script para cálculos financieros -->
+                    <script>
+                        // Código para calcular margen de ganancia y ratios financieros
+                        function calcularMargenDeGanancia() {
+            const cost = parseFloat(document.getElementById('cost').value);
+            const revenue = parseFloat(document.getElementById('revenue').value);
+            const profitMargin = ((revenue - cost) / revenue) * 100;
+            document.getElementById('profitMargin').textContent = `The profit margin is ${profitMargin.toFixed(2)}%`;
+        }
+    
+        function calcularRatiosFinancieros() {
+            const assets = parseFloat(document.getElementById('assets').value);
+            const liabilities = parseFloat(document.getElementById('liabilities').value);
+            const equity = parseFloat(document.getElementById('equity').value);
+    
+            const debtRatio = (liabilities / assets) * 100;
+            const equityRatio = (equity / assets) * 100;
+    
+            document.getElementById('debtRatio').textContent = `Debt Ratio: ${debtRatio.toFixed(2)}%`;
+            document.getElementById('equityRatio').textContent = `Net Worth Ratio: ${equityRatio.toFixed(2)}%`;
+        }
+                    </script>
+                    
+                   
+    
+                   
+                    <!-- Resto de tu HTML para el gráfico y los controles -->
+                    <canvas id="financialTrendsChart"></canvas>
+                    <div class="input-group">
+                        <label for="newIncome">New Income:</label>
+                        <input type="number" id="newIncome">
+                    </div>
+                    <div class="input-group">
+                        <label for="newExpense">New Expense:</label>
+                        <input type="number" id="newExpense">
+                    </div>
+                    <div class="input-group">
+                        <label for="monthSelect">month:</label>
+                        <select id="monthSelect">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <button onclick="updateData()">Update</button>
+                    <button onclick="changeChartType()">Switch to Area Chart</button>
+
+    <script>
+         const financialTrendsData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'Income',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [ 12783, 16742, 14892, 19635, 11761, 16549,
+    13987, 11234, 18243, 13456, 15789, 18932]
+                },
+                {
+                    label: 'Expenses',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    data: [ 14563, 11000, 19234, 15678, 13245, 17345,
+    12345, 18765, 14321, 17890, 19567, 16890]
+                }
+            ]
+        };
+
+
+        const financialTrendsConfig = {
+            type: 'line',
+            data: financialTrendsData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        };
+
+        let financialTrendsChart;
+
+        window.onload = function() {
+            const ctx = document.getElementById('financialTrendsChart').getContext('2d');
+            financialTrendsChart = new Chart(ctx, financialTrendsConfig);
+        };
+
+        function updateData() {
+            const newIncome = parseInt(document.getElementById('newIncome').value);
+            const newExpense = parseInt(document.getElementById('newExpense').value);
+            const month = document.getElementById('monthSelect').value;
+
+            // Obtener el índice del mes seleccionado
+            const monthIndex = financialTrendsData.labels.indexOf(month);
+
+            // Actualizar los datos de ingresos y gastos para el mes seleccionado
+            if (monthIndex !== -1) {
+                financialTrendsData.datasets[0].data[monthIndex] = newIncome;
+                financialTrendsData.datasets[1].data[monthIndex] = newExpense;
+
+                // Actualizar el gráfico
+                financialTrendsChart.update();
+            } else {
+                alert('Please select a valid month.');
+            }
+        }
+
+        function changeChartType() {
+            const newChartType = financialTrendsConfig.type === 'line' ? 'bar' : 'line';
+
+            // Cambiar el tipo de gráfico
+            financialTrendsChart.config.type = newChartType;
+
+            // Actualizar el gráfico
+            financialTrendsChart.update();
+        }
+    </script>
+                </div>
+              
+                <h1 class="title4">Strategy Ideator</h1>
+               
+                <div class="strategy-container">
+                    <input type="text" id="newStrategy" placeholder="Add new strategy">
+                    <button onclick="addStrategy()">Add</button>
+                </div>
+                <ul id="strategyList" class="strategy-list">
+                    <!-- Estrategias se agregarán dinámicamente aquí -->
+                </ul>
+            
+                <script>
+                    function addStrategy() {
+                        const input = document.getElementById('newStrategy');
+                        const strategy = input.value.trim();
+            
+                        if (strategy !== '') {
+                            const li = document.createElement('li');
+                            li.innerHTML = `
+                                <span>${strategy}</span>
+                                <button onclick="editStrategy(this)">Edit</button>
+                                <button onclick="deleteStrategy(this)">Eliminate</button>
+                            `;
+                            document.getElementById('strategyList').appendChild(li);
+                            input.value = '';
+                        } else {
+                            alert('Please enter a valid strategy.');
+                        }
+                    }
+            
+                    function editStrategy(button) {
+                        const li = button.parentElement;
+                        const span = li.querySelector('span');
+                        const newStrategy = prompt('Edit the strategy:', span.textContent.trim());
+                        if (newStrategy !== null) {
+                            span.textContent = newStrategy.trim();
+                        }
+                    }
+            
+                    function deleteStrategy(button) {
+                        const li = button.parentElement;
+                        li.remove();
+                    }
+
+                </script>
+
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with AI",
+      "botConversationDescription": "AI WIZARD ASSISTANT",
+      "botId": "02e02d97-e3dc-435c-8e4c-42264a475cc6",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "02e02d97-e3dc-435c-8e4c-42264a475cc6",
+      "webhookId": "0b0652ab-2cf9-4b3e-a040-e0ee7f82c59b",
+      "lazySocket": true,
+      "themeName": "prism",
+      "frontendVersion": "v1",
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#284296"
+  });
+</script>
+                          
+                          
+                
+                
+                          
+
+                
+
+
+
+            </div>
+        </div>
+
+       
+          
+           
+            
+        </div>
+    </section>
+
+      
+      
+
+       
+                  
+
+
+    <section id="join">
+        <div class="content-container">
+            <h2>Follow Wizard</h2>
+            
+            <a href="https://www.facebook.com/profile.php?id=61556647146013" class="icon"><i class="fa-brands fa-facebook-f" style="font-size: 60px;"></i></a>
+            <a href="https://github.com/Wizardtools" class="icon"><i class="fa-brands fa-github" style="font-size: 60px;"></i></a>
+            <a href="https://www.instagram.com/wizardtools1/" class="icon"><i class="fa-brands fa-instagram" style="font-size: 60px;"></i></a>
+            <a href="https://twitter.com/WizardtoolsGAR" class="icon"><i class="fa-brands fa-x-twitter" ></i></a>
+
+           
+              
+        </div>
+       
+    </section>
+    
+    <footer>
+        <p>Copyright &copy; 2024 Wizardtools-GAR</p>
+
+        <div class="container-2">
+            <!-- Contenido dentro del contenedor -->
+           
+            <p>Wizard tools is a leader in the development and implementation of digital tools designed specifically to meet the needs of executives in various industries. With a track record of innovation and excellence, Wizard tools has established itself as a trusted partner for businesses of all sizes, providing technology solutions that drive efficiency, productivity and business success.
+    
+                By combining deep market knowledge with the latest technology trends, Wizard tools offers a wide range of digital tools designed to improve decision making, optimize operational processes and increase competitiveness in an ever-changing business environment. From mobile applications to advanced analytics platforms, the company offers customized solutions that fit the specific needs of each client.
+                
+                With a multidisciplinary team of technology, design and business strategy experts, Wizard tools works closely with its clients to understand their challenges and objectives, and develop digital solutions that drive growth and innovation. Whether increasing operational efficiency, improving customer experience, or facilitating strategic decision making, Wizard tools solutions are designed to add significant value to business operations.
+                
+                In an increasingly digitalized and competitive business world, Wizard tools continues to be a benchmark in the development of cutting-edge digital tools that allow executives to make more informed decisions, drive business growth and achieve success in a constantly evolving business environment. .</p>
+        </div>
+    
+    </footer>
+
+    <script>
+        // Obtener el botón y el contenido de la analítica de datos
+        const toggleAnalyticsButton = document.getElementById('toggleAnalyticsContent');
+        const analyticsContent = document.getElementById('analyticsContent');
+
+        // Agregar evento de clic al botón de analítica de datos
+        toggleAnalyticsButton.addEventListener('click', function() {
+            // Alternar la clase 'hidden' para mostrar u ocultar el contenido de la analítica de datos
+            analyticsContent.classList.toggle('hidden');
+        });
+    </script>
+
+    <script>
+        // Obtener el botón y el contenido
+        const toggleProjectButton = document.getElementById('toggleProjectContent');
+        const projectContent = document.getElementById('projectContent');
+
+        // Agregar evento de clic al botón
+        toggleProjectButton.addEventListener('click', function() {
+            // Alternar la clase 'hidden' para mostrar u ocultar el contenido
+            projectContent.classList.toggle('hidden');
+        });
+    </script>
+
+
+
+  
+
+</body>
+</html>

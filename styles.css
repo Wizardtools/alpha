@@ -1,0 +1,772 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+
+.bpw-chat-container {
+width: 40%;
+
+}
+
+  
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-image: url('OIG3.jpg');
+    text-align: left;
+    color: #ffffff;
+    padding: 16px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #9900ff;
+}
+
+#hero {
+    background-image: url('Diseño\ sin\ título.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    image-resolution: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    header nav ul li {
+        display: block;
+        margin: 0;
+    }
+    .feature {
+        padding: 20px;
+        margin: 10px 0;
+    }
+    #hero h2 {
+        font-size: 24px;
+    }
+}
+
+
+.container-3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#content-3 {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*INVENTARIO*/
+
+
+.container-3 {
+    max-width: 800px;
+    margin: auto;
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th, .inventory-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.inventory-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.inventory-table tr:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
+
+.title2 {
+    text-align: center;
+    color: #000000;
+}
+
+
+
+
+/**/
+
+#hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    max-width:100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+    margin-top: 100px; /* Agrega un margen superior de 100px */
+
+}
+
+
+
+
+#features {
+    
+   background-color: #000000;
+    background-repeat: no-repeat;
+     /* Agrega una línea divisoria en la parte inferior de cada elemento */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo, pero puede que no se ajuste completamente. */
+    background-position: center; /* Centra la imagen en la página */
+    padding: 100px 0;
+    text-align: center;
+   
+    .feature {
+        background-color: rgba(255, 255, 255, 0.95); /* Ajustado para manejar opacidad */
+        padding: 40px;
+        border-radius: 10px;
+        margin: 20px 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    @media (max-width: 768px) {
+        #features {
+            padding: 50px 0; /* Menor padding en pantallas pequeñas */
+        }
+    
+        .feature {
+            padding: 20px; /* Menor padding dentro de los elementos */
+            margin: 10px 5px; /* Menor margen para maximizar el espacio disponible */
+        }
+    }
+
+}
+
+
+.feature {
+   background-color: #ffffff;
+   opacity: 1.5;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px Xpx;
+
+    margin: 20px 10px; /* Esto añade un margen superior e inferior de 20px y un margen derecho e izquierdo de 10px */
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+/*CONTENIDO ANALITYCS*/
+
+.container-1 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: left;
+    color: #ffffff;
+}
+
+.inputs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #0000;
+    border-radius: 5px;
+}
+
+.change-chart-btn, .update-chart-btn {
+    display: inline-block;
+    background-color: #9900ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.change-chart-btn:hover, .update-chart-btn:hover {
+    background-color: #7b008e;
+    transform: translateY(-3px);
+}
+
+canvas {
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Estilo para el botón "Mostrar/Ocultar Contenido" */
+.toggle-button {
+    background-color: #9f00cf; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 15px 30px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.toggle-button:hover {
+    background-color: #7b008e; /* Cambio de color al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de levantamiento al pasar el mouse */
+}
+
+
+/* Estilos para el contenedor principal */
+#app {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #0000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Estilos para los inputs y botones */
+input[type="text"],
+input[type="datetime-local"],
+button {
+    background-color: #0048cf;                  
+    color: #000000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    background-color: #8b00fd; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border: 2px solid #000000; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 5px 0; /* Margen exterior */
+    width: calc(50% - 24px); /* Ancho, ajustado por el padding y el borde */
+}
+
+input[type="text"]:hover,
+input[type="datetime-local"]:hover {
+    border-color: #888; /* Cambiar el color del borde al pasar el mouse */
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+    border-color: #0056b3; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Añadir sombra para resaltar */
+}
+
+
+
+
+/* Estilos para los botones */
+button:hover {
+    background-color: #6f008a;
+    transform: scale(1.05);
+}
+
+/* Estilos para las notas */
+#notesList {
+    margin-top: 20px;
+}
+
+.note-item {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.noteinput{
+    color: #ffffff;
+}
+.input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: rgb(232, 240, 254) !important; /* Fondo azul claro */
+    color: rgb(30, 58, 138) !important; /* Texto azul oscuro */
+}
+
+
+
+/* Estilos para el botón de eliminar notas */
+.delete-button {
+    background-color: red;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+/* Estilos para separar el formulario de notas */
+#noteForm {
+    margin-bottom: 20px;
+}
+
+#wordCounterWrapper {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    height: 150px; /* Área de texto más grande */
+   
+    font-family: inherit; /* Heredar la fuente del cuerpo */
+}
+
+#wordCount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5C7AEA; /* Color destacado para el contador */
+    background-color: #eef0f8; /* Fondo sutil para el contador */
+    padding: 10px;
+    border-radius: 4px; /* Bordes redondeados */
+    display: inline-block; /* Alineación adecuada */
+    margin: 0; /* Resetear márgenes */
+}
+
+/*INTENSE PRODUCTIVITY*/
+.widget-container {
+    text-align: center;
+    border: 2px solid #044dd4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    width: calc(100% - 24px);
+}
+
+#progressInput {
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    max-width: 300px; /* Establece un ancho máximo para evitar que el control se vuelva demasiado grande en pantallas grandes */
+    margin: 0 auto; /* Centra el control en el contenedor */
+}
+
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/*ANALISIS FINANCIERO*/
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-segundo {
+    text-align: center; /* Centrar los encabezados */
+        color: #000000;
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    
+}
+
+
+body {
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    text-align: center; /* Alinear el contenido al centro */
+}
+
+
+ 
+.btn {
+    padding: 10px 20px; /* Espaciado interno del botón */
+    margin: 10px; /* Margen exterior del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    border: none; /* Sin borde */
+    background-color: #007bff; /* Color de fondo */
+    color: #000000; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+.btn:hover {
+    background-color: #0056b3; /* Cambiar el color de fondo al pasar el mouse */
+}
+input[type="number"] {
+   
+    padding: 8px; /* Espaciado interno del campo de entrada */
+    margin: 10px; /* Margen exterior del campo de entrada */
+    border: 1px solid #000000; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 100px; /* Ancho del campo de entrada */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+
+
+
+  /* Estilos para el análisis financiero */
+  .h1-3 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+button {
+    
+    background-color: #9f00cf; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 15px 30px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+
+  /* Estilos para el contenedor */
+  .container-3 {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
+    padding: 20px; /* Relleno interior del contenedor */
+    background-color: #ffffff; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Borde redondeado del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+}
+
+/*ESTRATEGY*/
+.title4 {
+    color: #000000;
+    text-align: center;
+}
+.strategy-container {
+    margin-bottom: 10px;
+}
+.strategy-container input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.strategy-container button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.strategy-container button:hover {
+    background-color: #0056b3;
+}
+.strategy-list {
+    list-style-type: none;
+    padding: 0;
+}
+.strategy-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.strategy-list li:last-child {
+    margin-bottom: 0;
+}
+.strategy-list li button {
+    margin-left: 10px;
+}
+
+
+
+#join {
+    background-image: url('OIG-A.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo, pero puede que no se ajuste completamente. */
+    background-position: center; /* Centra la imagen en la página */
+    color: rgb(255, 255, 255);
+    padding: 100px 0;
+    text-align: center;
+    
+}
+
+.icon .fa-facebook-f,
+.icon .fa-github,
+.icon .fa-linkedin-in 
+.icon .fa-x-twitter{
+    color: #000000; /* Cambia esto por el color que prefieras */
+    margin: 10px; /* Añade un margen alrededor */
+    display: inline-block; /* Permite la alineación si es necesario */
+    text-align: center; /* Centra el texto o el icono dentro */
+    transition: color 0.3s ease-in-out; /* Suaviza la transición de color */
+   
+    border-radius: 50%; /* Añade bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+.icon .fa-facebook-f:hover,
+.icon .fa-github:hover,
+.icon .fa-instagram:hover,
+.icon .fa-linkedin-in:hover{
+    color: #ffffff; /* Cambia esto por el color al pasar el ratón que prefieras */
+}
+
+.icon .fa-x-twitter {
+    color: #000000; /* Cambia el color del icono */
+    font-size: 60px; /* Cambia el tamaño del icono */
+   
+    margin: 10px; /* Añade un margen alrededor */
+    display: inline-block; /* Permite la alineación si es necesario */
+    text-align: center; /* Centra el texto o el icono dentro */
+    transition: color 0.3s ease-in-out; /* Suaviza la transición de color */
+   
+    border-radius: 50%; /* Añade bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.icon .fa-x-twitter:hover {
+    color: #ffffff; /* Cambia esto por el color que prefieras al pasar el ratón */
+}
+
+.icon .fa-instagram:hover {
+    transition: transform 0.3s ease; /* Transición para suavizar el efecto */
+    transform: rotate(360deg); /* Rotación de 360 grados al pasar el ratón */
+
+}
+
+.icon .fa-github:hover {
+    transform: skewX(20deg);
+    transition: transform 0.3s ease;
+}
+
+/* Traslado (Translate) */
+.icon .fa-linkedin-in:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+/* Combinación de transformaciones */
+.icon .fa-facebook-f:hover {
+    transform: scale(1.1) rotate(10deg);
+    transition: transform 0.3s ease;
+}
+
+.icon .fa-x-twitter:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+
+}
+
+.content-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+    margin: 0 auto; /* Centra el contenedor */
+    display: inline-block; /* Hace que el contenedor se ajuste al contenido */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 80%; /* Máximo ancho del contenedor */
+}
+
+.content-container i {
+    width: 100px;
+    height: 50px;
+    color: #000000;
+}
+
+
+/* Estilos para el contenedor del chat */
+#botpress-web-chat-container {
+    position: fixed; /* Fija el chat en la pantalla */
+    bottom: 20px; /* Distancia desde abajo de la pantalla */
+    right: 20px; /* Distancia desde el lado derecho de la pantalla */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: #fff; /* Color de fondo */
+    max-width: 350px; /* Ancho máximo del chat */
+  }
+  
+  /* Estilos para el área de conversación */
+  #botpress-web-chat-conversation {
+    height: 300px; /* Altura del área de conversación */
+    overflow-y: auto; /* Barras de desplazamiento verticales */
+  }
+  
+  /* Estilos para el campo de entrada de texto */
+  #botpress-web-chat-composer-input {
+    border: none; /* Borde sin contorno */
+    border-top: 1px solid #ccc; /* Borde superior con color gris claro */
+    padding: 10px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+  }
+  
+  /* Estilos para los botones */
+  #botpress-web-chat-send-button {
+    background-color: #284296; /* Color de fondo del botón */
+    color: #fff; /* Color de texto del botón */
+    border: none; /* Borde sin contorno */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    margin-left: 5px; /* Margen izquierdo */
+    cursor: pointer; /* Cursor al pasar el ratón */
+  }
+  
+  /* Estilos para el mensaje de bienvenida */
+  #botpress-web-chat-welcome-message {
+    background-color: #284296; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+
+
+#join p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #9f00cf;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color:#9f00cf;
+    transform: translateY(-3px);
+}
+
+footer {
+    background-color: #0000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
