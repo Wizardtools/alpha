@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link href="https://fonts.gstatic.com" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    
-
    
-
     <title>WIZARD tools </title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+
+    <link rel="icon" href="LOGOW3.jpg" type="image/png">
     <link rel="icon" href="LOGOW3.png" type="image/png">
     
    
@@ -25,23 +33,39 @@
     </style>
 </head>
 <body>
+       
+       <!--end of cookies-->
+              
     <header>
         <div class="container">
+            <img src="WIzard.jpg" alt="" class="logo">
             <h1 class="titulo-primero">wizard tools CEOs and executives</h1>
+
+           
+
             
             <nav>
                 <ul>
                     <li><a href="#join">characteristics</a></li>
-                    <li><a href="https://github.com/Wizardtools/GAR.git">join us</a></li>
+                    <li><a href="http://localhost/login/view/home/signup.php">join us</a></li>
+
                 </ul>
             </nav>
         </div>
     </header>
 
+    
+    
     <section id="hero">
         <div class="container">
-            <h2>Boost your business success with our advanced tools.</h2>
-            <a href="#join" class="btn">Register now</a>
+          
+
+    <h2 class="illusion">Boost your business success with our advanced tools.</h2>
+              
+
+    <a href="http://localhost/login/view/home/signup.php" class="btn">Register now</a>
+
+           
         </div>
     </section>
                       
@@ -49,6 +73,7 @@
     <div class="container-3">
         <h1 class="title2">Products Inventory</h1>
         <button id="toggleButton">Show</button>
+       
         <div id="content" style="display: none;">
           
         <form id="productForm">
@@ -69,8 +94,42 @@
                 <!-- Los productos se añadirán aquí dinámicamente -->
             </tbody>
         </table>
+
+        <button id="downloadButton">Download Table</button> 
+
+
+        <script>
+                       document.getElementById('downloadButton').addEventListener('click', function() {
+            downloadTableAsCSV();
+        });
+        
+        function downloadTableAsCSV() {
+            const rows = document.querySelectorAll('.inventory-table tbody tr');
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Product,Amount,Unit Value\n"; // Agrega encabezados de columna
+        
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const rowData = Array.from(cells).map(cell => cell.innerText).join(',');
+                csvContent += rowData + "\n";
+            });
+        
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "inventory.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+        
+        
+        
+        </script>
         </div>
     </div>
+
+
+    
 
     <script>
         document.getElementById('toggleButton').addEventListener('click', function() {
@@ -84,12 +143,107 @@
 
     </script>
 
+
+
+
+
+<script>
+    var header = document.querySelector("header");
+    var lastScrollTop = 0;
+    var ticking = false;
+    
+    function hideHeader() {
+        header.style.transition = "top 0.3s ease";
+        header.style.top = "-100px";
+    }
+    
+    function showHeader() {
+        header.style.transition = "top 0.3s ease";
+        header.style.top = "0";
+    }
+    
+    function onScroll() {
+        lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                if (lastScrollTop > 50 && lastScrollTop > lastScrollTop) {
+                    hideHeader();
+                } else {
+                    showHeader();
+                }
+                ticking = false;
+            });
+    
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener("scroll", onScroll);
+    
+    </script>
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
     <!--ESTRATEGY-->
     
     
     <section id="features">
+
+        <div class="stars"></div>
+<div class="planet"></div>
+
+
+<script>
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 30; i++) {
+        const bigStar = document.createElement('div');
+        bigStar.className = 'big-star';
+        bigStar.style.top = `${Math.random() * 100}vh`;
+        bigStar.style.left = `${Math.random() * 100}vw`;
+        starsContainer.appendChild(bigStar);
+    }
+
+    setInterval(() => {
+        const comet = document.createElement('div');
+        comet.className = 'comet';
+        comet.style.top = `${Math.random() * 100}vh`;
+        comet.style.left = `${Math.random() * 100}vw`;
+        starsContainer.appendChild(comet);
+        setTimeout(() => {
+            comet.remove();
+        }, 1000);
+    }, 5000);
+
+    setInterval(() => {
+        const shootingStar = document.createElement('div');
+        shootingStar.className = 'shooting-star';
+        shootingStar.style.top = `${Math.random() * 100}vh`;
+        shootingStar.style.left = `${Math.random() * 100}vw`;
+        starsContainer.appendChild(shootingStar);
+        setTimeout(() => {
+            shootingStar.remove();
+        }, 1000);
+    }, 5000);
+</script>
+
+
         <div class="container">
-            <h2>Características Principales</h2>
+          
             <div class="feature">
                 <h3>Sales record</h3>
 
@@ -101,7 +255,7 @@
 
                   <!--CONTENIDO-->
                   <div class="container-1">
-                    <h1>Análisis de Ventas</h1>
+                   
                    
                     <div class="inputs-container">
                         <div class="input-group">
@@ -159,75 +313,112 @@
             
                 <script>
                     const ctx = document.getElementById('myChart').getContext('2d');
-                    let myChart;
-            
-                    function updateChart() {
-                        if (myChart) myChart.destroy(); // Destruye el gráfico anterior si existe
-            
-                        const january = parseInt(document.getElementById('january').value);
-                        const february = parseInt(document.getElementById('february').value);
-                        const march = parseInt(document.getElementById('march').value);
-                        const april = parseInt(document.getElementById('april').value);
-                        const may = parseInt(document.getElementById('may').value);
-                        const june = parseInt(document.getElementById('june').value);
-                        const july = parseInt(document.getElementById('july').value);
-                        const august = parseInt(document.getElementById('august').value);
-                        const september = parseInt(document.getElementById('september').value);
-                        const october = parseInt(document.getElementById('october').value);
-                        const november = parseInt(document.getElementById('november').value);
-                        const december = parseInt(document.getElementById('december').value);
-            
-                        myChart = new Chart(ctx, {
-                            type: 'line',
-                            data: {
-                    labels: ['January', 'February', 'March', 'April', 'May ', 'June', 'July', 'August', 'September ', 'October', 'November', 'December'],
-                    datasets: [{
-                        label: 'sales',
-                        data: [january, february, march, april, may, june, july, august, september, october, november, december],
-                        backgroundColor: [
-                            '#9900ff',
-                            '#7b008e',
-                            '#5d0073',
-                            '#450052',
-                            '#2e0038',
-                            '#18001f',
-                            '#9900ff',
-                            '#7b008e',
-                            '#5d0073',
-                            '#450052',
-                            '#2e0038',
-                            '#18001f'
-                        ]
-                    }]
-                },
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
+let myChart;
+
+function updateChart() {
+    if (myChart) myChart.destroy(); // Destruye el gráfico anterior si existe
+
+    const january = parseInt(document.getElementById('january').value);
+    const february = parseInt(document.getElementById('february').value);
+    const march = parseInt(document.getElementById('march').value);
+    const april = parseInt(document.getElementById('april').value);
+    const may = parseInt(document.getElementById('may').value);
+    const june = parseInt(document.getElementById('june').value);
+    const july = parseInt(document.getElementById('july').value);
+    const august = parseInt(document.getElementById('august').value);
+    const september = parseInt(document.getElementById('september').value);
+    const october = parseInt(document.getElementById('october').value);
+    const november = parseInt(document.getElementById('november').value);
+    const december = parseInt(document.getElementById('december').value);
+
+    myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May ', 'June', 'July', 'August', 'September ', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'sales',
+                data: [january, february, march, april, may, june, july, august, september, october, november, december],
+                backgroundColor: [
+                    '#9900ff',
+                    '#7b008e',
+                    '#5d0073',
+                    '#450052',
+                    '#2e0038',
+                    '#18001f',
+                    '#9900ff',
+                    '#7b008e',
+                    '#5d0073',
+                    '#450052',
+                    '#2e0038',
+                    '#18001f'
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'black' // Color del texto de la leyenda
                     }
-            
-                    function toggleChartType() {
-                        if (myChart.config.type === 'line') {
-                            myChart.config.type = 'bar';
-                            document.querySelector('.change-chart-btn').textContent = 'Switch to Line Chart';
-                        } else {
-                            myChart.config.type = 'line';
-                            document.querySelector('.change-chart-btn').textContent = 'Switch to Bar Chart';
-                        }
-                        myChart.update();
-                    }
-            
-                    // Inicialmente, se muestra el gráfico con los valores predeterminados
-                    updateChart();
+                }
+            },
+            elements: {
+                backgroundColor: 'white' // Fondo del gráfico
+            }
+        }
+    });
+}
+
+function toggleChartType() {
+    if (myChart.config.type === 'line') {
+        myChart.config.type = 'bar';
+        document.querySelector('.change-chart-btn').textContent = 'Switch to Line Chart';
+    } else {
+        myChart.config.type = 'line';
+        document.querySelector('.change-chart-btn').textContent = 'Switch to Bar Chart';
+    }
+    myChart.update();
+}
+
+// Inicialmente, se muestra el gráfico con los valores predeterminados
+updateChart();
+
                 </script>
 
 
+<button onclick="descargarGrafica()">Download Chart</button>
 
-                <p>Obtenga información clave sobre el rendimiento de su empresa con nuestras herramientas de análisis avanzado.</p>
+
+<script>
+  function descargarGrafica() {
+  // Obtener la imagen del gráfico en formato base64
+  const imagenGrafica = myChart.toBase64Image();
+
+  // Crear un elemento <a> temporal para simular la descarga
+  const enlaceDescarga = document.createElement('a');
+  enlaceDescarga.href = imagenGrafica;
+  enlaceDescarga.download = 'sales.png'; // Nombre del archivo de descarga
+
+  // Simular un clic en el enlace para iniciar la descarga
+  document.body.appendChild(enlaceDescarga);
+  enlaceDescarga.click();
+  document.body.removeChild(enlaceDescarga);
+}
+
+
+
+
+</script>
+
+
+
+
+              
             </div>
             <div class="feature">
                 <h3>Project management</h3>
@@ -309,13 +500,15 @@
                         </div>
                 
                     <script src="script.js"></script>
-                    <p>Aquí puede agregar más detalles sobre la gestión de proyectos si lo desea.</p>
+                    
                 </div>
             </div>
+           
+           
             <div class="feature">
                 <!-- Botón para mostrar y ocultar el gráfico -->
                 <h2 class="titulo-segundo">Risk analysis</h2>
-    <button id="toggleChartBtn" onclick="toggleChart()">Double click</button>
+    <button id="toggleChartBtn2" onclick="toggleChart()">Double click</button>
                 <div id="chartContainer" class="hidden"> <!-- Contenedor para el gráfico y los controles, inicialmente oculto -->
                     <section id="riesgos">
                         
@@ -418,10 +611,14 @@
             });
         
                     </script>
+                   
                                    <div class="h1-3">
                                   
                                     
                                    </div>
+
+
+                                   
                     
                 
                     <!-- Sección para calcular el margen de ganancia -->
@@ -482,7 +679,7 @@
                         <input type="number" id="newExpense">
                     </div>
                     <div class="input-group">
-                        <label for="monthSelect">month:</label>
+                        <label for="monthSelect">Month:</label>
                         <select id="monthSelect">
                             <option value="January">January</option>
                             <option value="February">February</option>
@@ -499,86 +696,87 @@
                         </select>
                     </div>
                     <button onclick="updateData()">Update</button>
-                    <button onclick="changeChartType()">Switch to Area Chart</button>
-
-    <script>
-         const financialTrendsData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            datasets: [
-                {
-                    label: 'Income',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    data: [ 12783, 16742, 14892, 19635, 11761, 16549,
-    13987, 11234, 18243, 13456, 15789, 18932]
-                },
-                {
-                    label: 'Expenses',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
-                    data: [ 14563, 11000, 19234, 15678, 13245, 17345,
-    12345, 18765, 14321, 17890, 19567, 16890]
-                }
-            ]
-        };
-
-
-        const financialTrendsConfig = {
-            type: 'line',
-            data: financialTrendsData,
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                    <button onclick="changeChartType()">Switch Chart Type</button>
+                    <button onclick="downloadChart()">Download Chart</button>
+                
+                    <script>
+                        const financialTrendsData = {
+                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                            datasets: [
+                                {
+                                    label: 'Income',
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1,
+                                    data: [12783, 16742, 14892, 19635, 11761, 16549, 13987, 11234, 18243, 13456, 15789, 18932]
+                                },
+                                {
+                                    label: 'Expenses',
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1,
+                                    data: [14563, 11000, 19234, 15678, 13245, 17345, 12345, 18765, 14321, 17890, 19567, 16890]
+                                }
+                            ]
+                        };
+                
+                        const financialTrendsConfig = {
+                            type: 'line',
+                            data: financialTrendsData,
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        };
+                
+                        let financialTrendsChart;
+                
+                        window.onload = function() {
+                            const ctx = document.getElementById('financialTrendsChart').getContext('2d');
+                            financialTrendsChart = new Chart(ctx, financialTrendsConfig);
+                        };
+                
+                        function updateData() {
+                            const newIncome = parseInt(document.getElementById('newIncome').value);
+                            const newExpense = parseInt(document.getElementById('newExpense').value);
+                            const month = document.getElementById('monthSelect').value;
+                
+                            const monthIndex = financialTrendsData.labels.indexOf(month);
+                
+                            if (monthIndex !== -1) {
+                                financialTrendsData.datasets[0].data[monthIndex] = newIncome;
+                                financialTrendsData.datasets[1].data[monthIndex] = newExpense;
+                                financialTrendsChart.update();
+                            } else {
+                                alert('Please select a valid month.');
+                            }
                         }
-                    }]
-                }
-            }
-        };
+                
+                        function changeChartType() {
+                            const newChartType = financialTrendsConfig.type === 'line' ? 'bar' : 'line';
+                            financialTrendsChart.config.type = newChartType;
+                            financialTrendsChart.update();
+                        }
+                
+                        function downloadChart() {
+                            const canvas = document.getElementById('financialTrendsChart');
+                            const url = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+                            const link = document.createElement('a');
+                            link.download = 'financial_trends_chart.png';
+                            link.href = url;
+                            link.click();
+                        }
+                    </script>
 
-        let financialTrendsChart;
 
-        window.onload = function() {
-            const ctx = document.getElementById('financialTrendsChart').getContext('2d');
-            financialTrendsChart = new Chart(ctx, financialTrendsConfig);
-        };
 
-        function updateData() {
-            const newIncome = parseInt(document.getElementById('newIncome').value);
-            const newExpense = parseInt(document.getElementById('newExpense').value);
-            const month = document.getElementById('monthSelect').value;
 
-            // Obtener el índice del mes seleccionado
-            const monthIndex = financialTrendsData.labels.indexOf(month);
 
-            // Actualizar los datos de ingresos y gastos para el mes seleccionado
-            if (monthIndex !== -1) {
-                financialTrendsData.datasets[0].data[monthIndex] = newIncome;
-                financialTrendsData.datasets[1].data[monthIndex] = newExpense;
 
-                // Actualizar el gráfico
-                financialTrendsChart.update();
-            } else {
-                alert('Please select a valid month.');
-            }
-        }
-
-        function changeChartType() {
-            const newChartType = financialTrendsConfig.type === 'line' ? 'bar' : 'line';
-
-            // Cambiar el tipo de gráfico
-            financialTrendsChart.config.type = newChartType;
-
-            // Actualizar el gráfico
-            financialTrendsChart.update();
-        }
-    </script>
-                </div>
-              
-                <h1 class="title4">Strategy Ideator</h1>
+<h1 class="title4">Strategy Ideator</h1>
                
                 <div class="strategy-container">
                     <input type="text" id="newStrategy" placeholder="Add new strategy">
@@ -622,6 +820,125 @@
                     }
 
                 </script>
+
+
+
+
+<div class="title5">
+    <h2>Probability Calculator</h2>
+
+    <label for="total">Total number of outcomes:</label>
+    <input type="number" id="total" placeholder="Enter total outcomes">
+
+    <label for="event">Number of successful outcomes:</label>
+    <input type="number" id="event" placeholder="Enter successful outcomes">
+
+    <button id="calculateBtn">Calculate Probability</button>
+
+    <div id="result"></div>
+
+    <h3>Examples:</h3>
+    <p>If rolling a fair six-sided die:</p>
+    <p>Total outcomes: 6</p>
+    <p>Successful outcomes (e.g., rolling a 3): 1</p>
+
+    <p>If flipping a fair coin:</p>
+    <p>Total outcomes: 2</p>
+    <p>Successful outcomes (e.g., landing heads): 1</p>
+</div>
+
+<script>
+    document.getElementById('calculateBtn').addEventListener('click', function() {
+        const totalOutcomes = parseFloat(document.getElementById('total').value);
+        const successfulOutcomes = parseFloat(document.getElementById('event').value);
+
+        if (isNaN(totalOutcomes) || isNaN(successfulOutcomes) || totalOutcomes < 0 || successfulOutcomes < 0) {
+            document.getElementById('result').innerHTML = '<p>Please enter valid numerical data.</p>';
+        } else if (successfulOutcomes > totalOutcomes) {
+            document.getElementById('result').innerHTML = '<p>The number of successful outcomes cannot exceed the total number of outcomes.</p>';
+        } else {
+            const probability = successfulOutcomes / totalOutcomes;
+            document.getElementById('result').innerHTML = `<p>The probability of the event is: ${probability.toFixed(4)}</p>`;
+        }
+    });
+</script>
+
+
+
+
+
+<div class="feature">
+
+
+    <div id="calculator">
+        <h1 class="ctext">Statistics and Probability Calculator</h1>
+        <div>
+            <label for="dataInput">Enter data (comma-separated):</label>
+            <input type="text" id="dataInput" placeholder="e.g., 10, 20, 30, 40">
+        </div>
+        <button id="calculateBtn2">Calculate</button> <!-- Cambiado el ID del botón de calcular -->
+        <div id="results" style="display: none;">
+            <h2>Results</h2>
+            <p><span>Mean:</span> <span id="meanResult"></span></p>
+            <p><span>Median:</span> <span id="medianResult"></span></p>
+            <p><span>Standard Deviation:</span> <span id="stdDevResult"></span></p>
+            <p><span>Probability of an Event:</span> <span id="probabilityResult"></span></p>
+        </div>
+        <script>
+            document.getElementById('calculateBtn2').addEventListener('click', function() { // Cambiado el ID del botón en el listener
+                const dataInput = document.getElementById('dataInput').value.trim();
+                const dataArray = dataInput.split(',').map(Number);
+        
+                const mean = calculateMean(dataArray);
+                document.getElementById('meanResult').textContent = mean.toFixed(2);
+        
+                const median = calculateMedian(dataArray);
+                document.getElementById('medianResult').textContent = median.toFixed(2);
+        
+                const stdDev = calculateStandardDeviation(dataArray);
+                document.getElementById('stdDevResult').textContent = stdDev.toFixed(2);
+        
+                const probability = calculateProbability(dataArray);
+                document.getElementById('probabilityResult').textContent = probability.toFixed(2);
+        
+                document.getElementById('results').style.display = 'block';
+            });
+        
+            function calculateMean(data) {
+                const sum = data.reduce((acc, curr) => acc + curr, 0);
+                return sum / data.length;
+            }
+        
+            function calculateMedian(data) {
+                const sortedData = data.slice().sort((a, b) => a - b);
+                const mid = Math.floor(sortedData.length / 2);
+                return sortedData.length % 2 !== 0 ? sortedData[mid] : (sortedData[mid - 1] + sortedData[mid]) / 2;
+            }
+        
+            function calculateStandardDeviation(data) {
+                const mean = calculateMean(data);
+                const squaredDiffs = data.map(num => Math.pow(num - mean, 2));
+                const variance = squaredDiffs.reduce((acc, curr) => acc + curr, 0) / data.length;
+                return Math.sqrt(variance);
+            }
+        
+            function calculateProbability(data) {
+                const eventCount = data.filter(num => num > 50).length; // Example: counting events greater than 50
+                return (eventCount / data.length) * 100; // Calculating probability as a percentage
+            }
+        </script>
+    </div>
+
+</div>
+
+
+    
+                </div>
+              
+
+
+
+
 
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script>
@@ -730,3 +1047,4 @@
 
 </body>
 </html>
+
