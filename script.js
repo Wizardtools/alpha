@@ -1,4 +1,5 @@
 
+
 document.getElementById('productForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Evita el envío del formulario
 
@@ -13,7 +14,7 @@ document.getElementById('productForm').addEventListener('submit', function(e) {
         <td>${productName}</td>
         <td>${productQuantity}</td>
         <td>${productValue}</td>
-        <td><button class="deleteBtn">Eliminate</button></td>
+        <td><button class="deleteBtn">X</button></td>
     `;
 
     // Añade la nueva fila al cuerpo de la tabla
@@ -206,5 +207,5 @@ document.addEventListener('DOMContentLoaded', function() {
 // Avatar 
 
 
-
+// cookies 
 
