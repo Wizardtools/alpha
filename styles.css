@@ -8,13 +8,11 @@ body {
 }
 
 
+
 .bpw-chat-container {
 width: 40%;
 
 }
-
-  
-
 
 .container {
     max-width: 1200px;
@@ -23,13 +21,118 @@ width: 40%;
 }
 
 header {
-    background-image: url('OIG3.jpg');
+  
+   
+    padding: 20px 0;
+    background-image: url(/Blue\ And\ Violet\ Modern\ New\ Product\ Facebook\ Post.png);
+    color: rgb(240, 240, 240);
     text-align: left;
-    color: #ffffff;
-    padding: 16px 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@keyframes backgroundFade {
+    0% {
+        opacity: 1; /* Opacidad inicial */
+    }
+    50% {
+        opacity: 0.8; /* Opacidad intermedia */
+    }
+    100% {
+        opacity: 1; /* Opacidad final */
+    }
+}
+
+header {
+    background-color: #000000; /* Color de fondo */
+    animation: backgroundFade 6s ease-in-out infinite alternate; /* Aplicar la animación al fondo del encabezado */
+}
+
+
+
+
+
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2.2rem;
+   
+    animation: slideIn 1s ease forwards; /* Aplicar la animación al h1 */
+}
+
+
+
+.title2 {
+    font-size: 1.5rem;
+}
+
+.title4 {
+    font-size: 1.5rem;
+    font-family: Arial, sans-serif;
+}
+
+
+button {
+    padding: 5% 10%;
+    font-size: 1.2em;
+}
+
+
+/* cookies */
+
+
+
+/* style.css */
+
+
+
+
+
+
+.logo {
+    width: 35px;
+    animation: pulse 2s infinite;
+    position: absolute; /* Posiciona el contenedor de la imagen */
+    text-align: left;
+   
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 321px) and (max-width: 800px) {
+    .logo {
+        left: auto;
+        right: 20px;
+    }
+}
+
+@media (min-width: 801px) {
+    .logo {
+        left: 20px;
+        right: auto;
+    }
 }
 
 header nav ul {
@@ -53,15 +156,70 @@ header nav ul li a:hover {
     color: #9900ff;
 }
 
+
+
+
+
 #hero {
+   
     background-image: url('Diseño\ sin\ título.png');
+    
     background-size: cover;
-    background-position: center;
+    background-position: left;
     color: #fff;
     padding: 100px 0;
     text-align: center;
     image-resolution: 100%;
+   
+
+ 
+      
 }
+
+.illusion {
+    animation: cambioColor 5s ease-in-out infinite;
+    width: 1000px; /* Ancho del óvalo */
+    height: 100px; /* Alto del óvalo */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5); /* Sombra exterior */
+   
+   
+
+}
+    
+@keyframes cambioColor {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes cambioColor {
+    0% {
+        background: linear-gradient(to right, #4f0099, #270e85, #000000, #000000);
+    }
+    25% {
+        background: linear-gradient(to right, #000000, #4f0099, #270e85, #000000);
+    }
+    50% {
+        background: linear-gradient(to right, #170042, #000000, #4f0099, #000657);
+    }
+    75% {
+        background: linear-gradient(to right, #000000, #170042, #000000, #4f0099);
+    }
+    100% {
+        background: linear-gradient(to right, #000000, #000000, #170042, #000000);
+    }
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     .container {
@@ -81,9 +239,32 @@ header nav ul li a:hover {
 }
 
 
+
+
 .container-3 {
     text-align: center;
     margin-top: 20px;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .container-3 {
+        padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    /* Ajusta el tamaño del botón */
+    button {
+
+        padding: 10px 20px; /* Ajusta el padding para controlar el tamaño del botón */
+    font-size: 16px; /* Tamaño del texto */
+    border: 2px solid #000000; /* Grosor y color del borde */
+    border-radius: 5px; /* Borde redondeado */
+    background-color: #ffffff; /* Color de fondo */
+    color: #000000; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
+                                            /*****************************/
+    }
 }
 
 #content-3 {
@@ -96,6 +277,20 @@ header nav ul li a:hover {
 
 /*INVENTARIO*/
 
+  /* Aquí van las reglas CSS adicionales */
+  #productForm input[type="text"] {
+    width: 250px; /* Ajusta el ancho del campo de entrada de texto */
+    height: 40px; /* Ajusta la altura del campo de entrada de texto */
+    padding: 10px; /* Ajusta el espaciado interno del campo de entrada de texto */
+}
+
+#productForm button {
+    width: 200px; /* Ajusta el ancho del botón "add product" */
+    height: 40px; /* Ajusta la altura del botón "add product" */
+    padding: 8px 16px; /* Ajusta el espaciado interno del botón "add product" */
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón "add product" */
+}
+
 
 .container-3 {
     max-width: 800px;
@@ -104,6 +299,21 @@ header nav ul li a:hover {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+#content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#toggleButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .inventory-table {
@@ -115,6 +325,10 @@ header nav ul li a:hover {
     text-align: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permite que las palabras se partan y ajusten según el ancho de la celda */
+    overflow-wrap: break-word; /* Alternativa moderna a word-wrap, hace lo mismo */
+    max-width: 0; /* Asegura que las celdas no se expandan indefinidamente */
+    padding: 5px; /* Ajuste para un poco de espacio interno */
 }
 
 .inventory-table th {
@@ -134,7 +348,75 @@ header nav ul li a:hover {
 }
 
 
+#productForm {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos del formulario se ajusten en filas según el espacio disponible */
+    gap: 10px; /* Espacio entre los elementos del formulario */
+}
 
+#productForm input, #productForm button {
+    flex: 1 1 auto; /* Permite que los elementos del formulario crezcan para llenar el espacio disponible pero también se ajusten cuando el espacio es limitado */
+}
+
+/* Asegúrate de que el botón no se estire demasiado, ajusta según tus necesidades */
+#productForm button {
+    flex: none; /* Evita que el botón crezca más de lo necesario */
+    white-space: nowrap; /* Evita que el texto dentro del botón se parta */
+}
+
+
+
+#toggleButton {
+    background-color: #0039f3; /* Verde */
+    color: white;
+    padding: 14px 16px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #toggleButton:hover {
+    background-color: #222222;
+  }
+
+
+
+  #toggleButton {
+    background-color: #0039f3; /* Verde */
+    color: white;
+    padding: 14px 16px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toggleButton:hover {
+    background-color: #222222;
+}
+
+  
+  .deleteBtn {
+    background-color: #ff4d4d; /* Color de fondo rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Padding para hacerlo más grande */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor a una mano cuando se pase por encima */
+    transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.deleteBtn:hover {
+    background-color: #cc0000; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+
+/* Nuevo estilo para el contenedor de la tabla */
+.table-container {
+    max-height: 400px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Desbordamiento vertical con barra de desplazamiento si es necesario */
+}
 
 /**/
 
@@ -157,20 +439,25 @@ header nav ul li a:hover {
 
 #features {
     
-   background-color: #000000;
+  
     background-repeat: no-repeat;
      /* Agrega una línea divisoria en la parte inferior de cada elemento */
     background-size: cover; /* Asegura que la imagen cubra todo el fondo, pero puede que no se ajuste completamente. */
     background-position: center; /* Centra la imagen en la página */
     padding: 100px 0;
     text-align: center;
+    
+    
    
+    
     .feature {
         background-color: rgba(255, 255, 255, 0.95); /* Ajustado para manejar opacidad */
         padding: 40px;
         border-radius: 10px;
         margin: 20px 10px;
         transition: transform 0.3s ease;
+        overflow: hidden; /* Asegúrate de que el contenido no se salga */
+        word-wrap: break-word; /* Asegura que las palabras largas no sobrepasen el contenedor */
     }
     
     @media (max-width: 768px) {
@@ -183,7 +470,95 @@ header nav ul li a:hover {
             margin: 10px 5px; /* Menor margen para maximizar el espacio disponible */
         }
     }
+}
+/*SPACE*/
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkling linear infinite;
+}
+
+@keyframes twinkling {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+
+
+.comet {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0;
+    animation: comet 1s linear infinite;
+}
+
+@keyframes comet {
+    0% {
+        opacity: 1;
+        transform: translate(-200%, -200%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(200%, 200%);
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    animation: shootingStar 1s linear infinite;
+}
+
+@keyframes shootingStar {
+    0% {
+        opacity: 1;
+        transform: translate(-200%, -200%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(200%, 200%);
+    }
+}
+
+.big-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinklingBig 2s linear infinite;
+}
+
+@keyframes twinklingBig {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.2;
+    }
 }
 
 
@@ -241,7 +616,7 @@ h1 {
 
 .change-chart-btn, .update-chart-btn {
     display: inline-block;
-    background-color: #9900ff;
+    background-color: #8400ff;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -253,7 +628,7 @@ h1 {
 }
 
 .change-chart-btn:hover, .update-chart-btn:hover {
-    background-color: #7b008e;
+    background-color: #000000;
     transform: translateY(-3px);
 }
 
@@ -267,7 +642,7 @@ canvas {
 
 /* Estilo para el botón "Mostrar/Ocultar Contenido" */
 .toggle-button {
-    background-color: #9f00cf; /* Color de fondo */
+    background-color: #2600ff; /* Color de fondo */
     color: #ffffff; /* Color del texto */
     padding: 15px 30px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
@@ -276,7 +651,7 @@ canvas {
 }
 
 .toggle-button:hover {
-    background-color: #7b008e; /* Cambio de color al pasar el mouse */
+    background-color: #000000; /* Cambio de color al pasar el mouse */
     transform: translateY(-3px); /* Efecto de levantamiento al pasar el mouse */
 }
 
@@ -334,7 +709,7 @@ input[type="datetime-local"]:focus {
 
 /* Estilos para los botones */
 button:hover {
-    background-color: #6f008a;
+    background-color: #0048cf;
     transform: scale(1.05);
 }
 
@@ -463,6 +838,13 @@ body, html {
     
 }
 
+.toggleChartBtn2 {
+
+    padding: 10px 20px; /* Espaciado interno del botón */
+      font-size: 2.5rem;
+
+}
+
 
 body {
     font-family: Arial, sans-serif; /* Fuente del texto */
@@ -522,14 +904,52 @@ input {
 }
 
 button {
-    
-    background-color: #9f00cf; /* Color de fondo */
-    color: #ffffff; /* Color del texto */
-    padding: 15px 30px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 18px; /* Tamaño del texto */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    background-color: #0042d1;
+    color: #ffffff;
+  
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: none; /* Conserva las letras en minúsculas */
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 200%;
+    animation: gradient-glow 3s ease infinite;
 }
+
+@keyframes gradient-glow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button:hover {
+    background-color: #0026cf;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 5% 10%;
+        font-size: 1.2em;
+    }
+}
+
 
 button:hover {
     background-color: #000000;
@@ -603,8 +1023,137 @@ p {
 
 
 
+
+
+/*calculator*/
+#calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ctext {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+span {
+    font-weight: bold;
+}
+
+
+
+/*calculator p*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title5 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+}
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+#result {
+    margin-top: 20px;
+    color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #join {
-    background-image: url('OIG-A.jpeg');
+    background-image: url('csde.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* Asegura que la imagen cubra todo el fondo, pero puede que no se ajuste completamente. */
     background-position: center; /* Centra la imagen en la página */
@@ -612,6 +1161,29 @@ p {
     padding: 100px 0;
     text-align: center;
     
+}
+
+
+.contorno-suavizado {
+    display: inline-block;
+    position: relative;
+}
+
+.contorno-suavizado img {
+    display: block;
+    border-radius: 50%;
+}
+
+.contorno-suavizado::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .icon .fa-facebook-f,
@@ -748,7 +1320,7 @@ p {
 
 .btn {
     display: inline-block;
-    background-color: #9f00cf;
+    background-color: #4900be;
     color: #fff;
     padding: 15px 30px;
     border-radius: 5px;
@@ -758,15 +1330,31 @@ p {
 }
 
 .btn:hover {
-    background-color:#9f00cf;
+    background-color:#000000;
     transform: translateY(-3px);
 }
 
 footer {
     background-color: #0000;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
+
+    
+        
+        
+      
+     
+       
+}
+
+@keyframes moveStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 
