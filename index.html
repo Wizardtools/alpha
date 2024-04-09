@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<!---->
+ 
+<!---->
    
     <title>WIZARD tools </title>
 
@@ -22,8 +24,8 @@
 
 
 
-    <link rel="icon" href="logow3.jpg" type="image/png">
-    <link rel="icon" href="logow3.jpg" type="image/png">
+    <link rel="icon" href="LOGOW3.jpg" type="image/png">
+    <link rel="icon" href="LOGOW3.png" type="image/png">
     
    
     <style>
@@ -38,7 +40,7 @@
               
     <header>
         <div class="container">
-            <img src="wizard.jpg" alt="" class="logo">
+            <img src="WIzard.jpg" alt="" class="logo">
             <h1 class="titulo-primero">wizard tools CEOs and executives</h1>
 
            
@@ -59,6 +61,7 @@
     <section id="hero">
         <div class="container">
           
+        
 
     <h2 class="illusion">Boost your business success with our advanced tools.</h2>
               
@@ -70,7 +73,7 @@
     </section>
                       
     <!--INVENTARY-->
-    <div class="container-3">
+    <div class="container-32">
         <h1 class="title2">Products Inventory</h1>
         <button id="toggleButton">Show</button>
        
@@ -242,7 +245,7 @@
 </script>
 
 
-        <div class="container">
+<div class="container">
           
             <div class="feature">
                 <h3>Sales record</h3>
@@ -422,7 +425,7 @@ updateChart();
             </div>
             <div class="feature">
                 <h3>Project management</h3>
-                <p>Monitor and coordinate projects efficiently with our intuitive project management tools.</p>
+               
                 <!-- Agregar botón y contenido a mostrar/ocultar -->
                 <button id="toggleProjectContent" class="toggle-button">show me</button>
 
@@ -507,7 +510,7 @@ updateChart();
            
             <div class="feature">
                 <!-- Botón para mostrar y ocultar el gráfico -->
-                <h2 class="titulo-segundo">Risk analysis</h2>
+                <h2 class="titulo-segundo">Analysis</h2>
     <button id="toggleChartBtn2" onclick="toggleChart()">Double click</button>
                 <div id="chartContainer" class="hidden"> <!-- Contenedor para el gráfico y los controles, inicialmente oculto -->
                     <section id="riesgos">
@@ -668,109 +671,44 @@ updateChart();
                    
     
                    
-                    <!-- Resto de tu HTML para el gráfico y los controles -->
-                    <canvas id="financialTrendsChart"></canvas>
-                    <div class="input-group">
-                        <label for="newIncome">New Income:</label>
-                        <input type="number" id="newIncome">
-                    </div>
-                    <div class="input-group">
-                        <label for="newExpense">New Expense:</label>
-                        <input type="number" id="newExpense">
-                    </div>
-                    <div class="input-group">
-                        <label for="monthSelect">Month:</label>
-                        <select id="monthSelect">
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                        </select>
-                    </div>
-                    <button onclick="updateData()">Update</button>
-                    <button onclick="changeChartType()">Switch Chart Type</button>
-                    <button onclick="downloadChart()">Download Chart</button>
-                
-                    <script>
-                        const financialTrendsData = {
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                            datasets: [
-                                {
-                                    label: 'Income',
-                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                    borderColor: 'rgba(75, 192, 192, 1)',
-                                    borderWidth: 1,
-                                    data: [12783, 16742, 14892, 19635, 11761, 16549, 13987, 11234, 18243, 13456, 15789, 18932]
-                                },
-                                {
-                                    label: 'Expenses',
-                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                    borderColor: 'rgba(255, 99, 132, 1)',
-                                    borderWidth: 1,
-                                    data: [14563, 11000, 19234, 15678, 13245, 17345, 12345, 18765, 14321, 17890, 19567, 16890]
-                                }
-                            ]
-                        };
-                
-                        const financialTrendsConfig = {
-                            type: 'line',
-                            data: financialTrendsData,
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        };
-                
-                        let financialTrendsChart;
-                
-                        window.onload = function() {
-                            const ctx = document.getElementById('financialTrendsChart').getContext('2d');
-                            financialTrendsChart = new Chart(ctx, financialTrendsConfig);
-                        };
-                
-                        function updateData() {
-                            const newIncome = parseInt(document.getElementById('newIncome').value);
-                            const newExpense = parseInt(document.getElementById('newExpense').value);
-                            const month = document.getElementById('monthSelect').value;
-                
-                            const monthIndex = financialTrendsData.labels.indexOf(month);
-                
-                            if (monthIndex !== -1) {
-                                financialTrendsData.datasets[0].data[monthIndex] = newIncome;
-                                financialTrendsData.datasets[1].data[monthIndex] = newExpense;
-                                financialTrendsChart.update();
-                            } else {
-                                alert('Please select a valid month.');
-                            }
-                        }
-                
-                        function changeChartType() {
-                            const newChartType = financialTrendsConfig.type === 'line' ? 'bar' : 'line';
-                            financialTrendsChart.config.type = newChartType;
-                            financialTrendsChart.update();
-                        }
-                
-                        function downloadChart() {
-                            const canvas = document.getElementById('financialTrendsChart');
-                            const url = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-                            const link = document.createElement('a');
-                            link.download = 'financial_trends_chart.png';
-                            link.href = url;
-                            link.click();
-                        }
-                    </script>
+                   <!-- Resto de tu HTML para el gráfico y los controles -->
 
+                   <h2>Financial Trends Chart</h2>
+                   <canvas id="financialTrendsChart"></canvas>
+
+                   
+    <div class="input-group">
+        <label for="monthSelect1">Month:</label>
+        <select id="monthSelect1">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+
+        <div class="input-group">
+            <label for="newIncome1">New Income:</label>
+            <input type="number" id="newIncome1">
+        </div>
+        <div class="input-group">
+            <label for="newExpense1">New Expense:</label>
+            <input type="number" id="newExpense1">
+        </div>
+
+
+    </div>
+    <button onclick="updateFinancialTrendsChart()">Update</button>
+    <button onclick="switchFinancialTrendsChartType()">Switch Chart Type</button>
+    <button onclick="downloadFinancialTrendsChart()">Download Chart</button>
+    
 
 
 
@@ -869,8 +807,8 @@ updateChart();
 
 <div class="feature">
 
-
     <div id="calculator">
+    
         <h1 class="ctext">Statistics and Probability Calculator</h1>
         <div>
             <label for="dataInput">Enter data (comma-separated):</label>
@@ -931,10 +869,912 @@ updateChart();
 
 </div>
 
+<!--CALCULATOR TWO-->
+<div class="container-3">
+    <!-- Encabezado -->
+  <header class="two">
+      <h1 class="title6">Finance and Accounting Portal</h1>
+  </header>
 
+
+  
+
+      <!-- Análisis de tendencias -->
+      
+     
+  
+      <!-- Formulario para calcular la tasa de interés -->
+      <div class="container">
+          <h2 class="section-title1">Interest rate</h2>
+          <label for="principal2">major:</label>
+          <input type="number" id="principal2">
+          <label for="futureValue2">Future Value:</label>
+          <input type="number" id="futureValue2">
+          <label for="years3">Term (years):</label>
+          <input type="number" id="years3">
+          <button onclick="calculateInterestRate()">Calculate</button>
+          <p id="interestRateResult" style="color: white;"></p>
+      </div>
+  
+      <script>
+          function calculateFutureValue() {
+              const principal = parseFloat(document.getElementById('principal').value);
+              const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+              const years = parseInt(document.getElementById('years').value);
+              const futureValue = principal * Math.pow(1 + interestRate, years);
+              document.getElementById('futureValueResult').innerText = `Valor Futuro: ${futureValue.toFixed(2)}`;
+          }
+  
+          function calculatePresentValue() {
+              const futureValue = parseFloat(document.getElementById('futureValue').value);
+              const interestRate = parseFloat(document.getElementById('interestRate2').value) / 100;
+              const years = parseInt(document.getElementById('years2').value);
+              const presentValue = futureValue / Math.pow(1 + interestRate, years);
+              document.getElementById('presentValueResult').innerText = `Valor Presente: ${presentValue.toFixed(2)}`;
+
+          }
+  
+          function calculateInterestRate() {
+              const principal = parseFloat(document.getElementById('principal2').value);
+              const futureValue = parseFloat(document.getElementById('futureValue2').value);
+              const years = parseInt(document.getElementById('years3').value);
+              const interestRate = Math.pow(futureValue / principal, 1 / years) - 1;
+              document.getElementById('interestRateResult').innerText = `Interest rate: ${(interestRate * 100).toFixed(2)}%`;
+          }
+      </script>
+      
+
+      <!-- Cálculo de porcentajes -->
+      <section class="section">
+      <h2 class="section-title">Percentage Calculation</h2>
+      <label for="number">Number:</label>
+      <input type="number" id="number">
+      <label for="percentage">percentaje:</label>
+      <input type="number" id="percentage">
+      <button onclick="calculatePercentage()">Calculate</button>
+      <p id="percentageResult"></p>
+  </section>
+
+  <section class="section">
+      <h2 class="section-title">Increase or Decrease by Percentage</h2>
+      <label for="originalValue">Original Value:</label>
+      <input type="number" id="originalValue">
+      <label for="percentChange">shift (%):</label>
+      <input type="number" id="percentChange">
+      <button onclick="calculateIncrementDecrement()">Calculate</button>
+      <p id="incrementDecrementResult"></p>
+  </section>
+
+  <script>
+      function calculatePercentage() {
+          var number = parseFloat(document.getElementById('number').value);
+          var percentage = parseFloat(document.getElementById('percentage').value);
+          var result = (number * percentage) / 100;
+          document.getElementById('percentageResult').textContent = `the ${percentage}% of ${number} is ${result}`;
+      }
+
+      function calculateIncrementDecrement() {
+          var originalValue = parseFloat(document.getElementById('originalValue').value);
+          var percentChange = parseFloat(document.getElementById('percentChange').value);
+          var result = originalValue + (originalValue * (percentChange / 100));
+          document.getElementById('incrementDecrementResult').textContent = `The value after the change is ${result}`;
+      }
+  </script>
+      <!-- Amortización y depreciación -->
+      <section class="section">
+          <h2 class="section-title">Amortization Calculator</h2>
+          <label for="loanAmount">Loan amount:</label>
+          <input type="number" id="loanAmount" min="1">
+          <label for="annualInterestRate">Annual interest rate (%):</label>
+          <input type="number" id="annualInterestRate" min="0">
+          <label for="loanTerm">Loan term (in years):</label>
+          <input type="number" id="loanTerm" min="1">
+          <button onclick="calculateAmortization()">Calculate</button>
+          <div id="amortizationSchedule"></div>
+      </section>
+  
+      <script>
+          function calculateAmortization() {
+              var loanAmount = parseFloat(document.getElementById('loanAmount').value);
+              var annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value) / 100;
+              var loanTerm = parseFloat(document.getElementById('loanTerm').value);
+              var monthlyInterestRate = annualInterestRate / 12;
+              var numberOfPayments = loanTerm * 12;
+              var monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+  
+              var amortizationSchedule = '<h3>Amortization Plan</h3>';
+              amortizationSchedule += '<table>';
+              amortizationSchedule += '<tr><th>Month</th><th>monthly payment</th><th>interest</th><th>major</th><th>Outstanding balance</th></tr>';
+              var balance = loanAmount;
+              for (var i = 1; i <= numberOfPayments; i++) {
+                  var interest = balance * monthlyInterestRate;
+                  var principal = monthlyPayment - interest;
+                  balance -= principal;
+                  amortizationSchedule += '<tr>';
+                  amortizationSchedule += '<td>' + i + '</td>';
+                  amortizationSchedule += '<td>' + monthlyPayment.toFixed(2) + '</td>';
+                  amortizationSchedule += '<td>' + interest.toFixed(2) + '</td>';
+                  amortizationSchedule += '<td>' + principal.toFixed(2) + '</td>';
+                  amortizationSchedule += '<td>' + balance.toFixed(2) + '</td>';
+                  amortizationSchedule += '</tr>';
+              }
+              amortizationSchedule += '</table>';
+  
+              document.getElementById('amortizationSchedule').innerHTML = amortizationSchedule;
+          }
+      </script>
+
+
+      <!-- Valor presente y futuro -->
+      <section class="section">
+          <h2 class="section-title">Present and Future Value</h2>
+          <div class="input-group">
+              <label for="cashFlow">Cash flow (income or expenses):</label>
+              <input type="number" id="cashFlow" step="0.01" placeholder="Enter the amount" required>
+          </div>
+          <div class="input-group">
+              <label for="interestRate">Annual interest rate (%):</label>
+              <input type="number" id="interestRate" min="0" step="0.01" placeholder="Enter the rate" required>
+          </div>
+          <div class="input-group">
+              <label for="periods">Number of periods:</label>
+              <input type="number" id="periods" min="1" placeholder="Enter the number of periods" required>
+          </div>
+          <button onclick="calculatePresentAndFutureValue()">Calculate</button>
+          <div id="presentValue" class="result"></div>
+          <div id="futureValue" class="result"></div>
+      </section>
+      
+      <style>
+          .section {
+              margin-bottom: 20px;
+              background-color: #f9f9f9;
+              border-radius: 10px;
+              padding: 20px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+      
+          .section-title {
+              color: rgb(0, 0, 0);
+              margin-bottom: 15px;
+          }
+
+          .section-title1{
+            color: rgb(255, 255, 255);
+            font-style: italic;
+            font-size: 25px;
+          }
+      
+          .input-group {
+              margin-bottom: 15px;
+          }
+      
+          label {
+              display: block;
+              color: #666;
+              margin-bottom: 5px;
+          }
+      
+         
+      
+          button {
+              padding: 10px 20px;
+              background-color: #007bff;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+          }
+      
+          button:hover {
+              background-color: #0056b3;
+          }
+      
+          .result {
+              margin-top: 15px;
+              font-size: 18px;
+          }
+      
+          #presentValue {
+              color: #28a745;
+          }
+      
+          #futureValue {
+              color: #dc3545;
+          }
+      </style>
+      
+      <script>
+          function calculatePresentAndFutureValue() {
+              var cashFlow = parseFloat(document.getElementById('cashFlow').value);
+              var interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+              var periods = parseInt(document.getElementById('periods').value);
+      
+              var presentValue = cashFlow / Math.pow(1 + interestRate, periods);
+              var futureValue = cashFlow * Math.pow(1 + interestRate, periods);
+      
+              document.getElementById('presentValue').innerHTML = '<strong>Present value:</strong> $' + presentValue.toFixed(2);
+              document.getElementById('futureValue').innerHTML = '<strong>Future Value:</strong> $' + futureValue.toFixed(2);
+          }
+      </script>
+      
+
+      <!-- Estadísticas financieras -->
+      <section class="section">
+        <h2>Financial Evaluation</h2>
+        <div class="input-group">
+            <label for="expenseType1">Expense Type:</label>
+            <input type="text" id="expenseType1" placeholder="Ingrese el tipo de gasto">
+        </div>
+        <div class="input-group">
+            <label for="expenseAmount1">Daily Amount:</label>
+            <input type="number" id="expenseAmount1" min="0" max="100" step="0.01" value="0">
+        </div>
+        <button onclick="addExpense(1)">Add Expense</button>
+        <div class="chart-container">
+            <canvas id="financialChartCanvas1"></canvas>
+        </div>
+        <button onclick="downloadFinancialChart(1)">Download Chart</button>
+    </section>
+    
+    <script>
+        // Variables y configuraciones específicas para Financial Trends Chart
+        const financialTrendsData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: 'Income',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [12783, 16742, 14892, 19635, 11761, 16549, 13987, 11234, 18243, 13456, 15789, 18932]
+                },
+                {
+                    label: 'Expenses',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    data: [14563, 11000, 19234, 15678, 13245, 17345, 12345, 18765, 14321, 17890, 19567, 16890]
+                }
+            ]
+        };
+    
+        const financialTrendsConfig = {
+            type: 'line',
+            data: financialTrendsData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+    
+        let financialTrendsChart;
+    
+        window.onload = function() {
+            const ctx = document.getElementById('financialTrendsChart').getContext('2d');
+            financialTrendsChart = new Chart(ctx, financialTrendsConfig);
+        };
+    
+        function updateFinancialTrendsChart() {
+            const newIncome = parseInt(document.getElementById('newIncome1').value);
+            const newExpense = parseInt(document.getElementById('newExpense1').value);
+            const month = document.getElementById('monthSelect1').value;
+    
+            const monthIndex = financialTrendsData.labels.indexOf(month);
+    
+            if (monthIndex !== -1) {
+                financialTrendsData.datasets[0].data[monthIndex] = newIncome;
+                financialTrendsData.datasets[1].data[monthIndex] = newExpense;
+                financialTrendsChart.update();
+            } else {
+                alert('Please select a valid month.');
+            }
+        }
+    
+        function switchFinancialTrendsChartType() {
+            const newChartType = financialTrendsConfig.type === 'line' ? 'bar' : 'line';
+            financialTrendsChart.config.type = newChartType;
+            financialTrendsChart.update();
+        }
+    
+        function downloadFinancialTrendsChart() {
+            const canvas = document.getElementById('financialTrendsChart');
+            const url = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+            const link = document.createElement('a');
+            link.download = 'financial_trends_chart.png';
+            link.href = url;
+            link.click();
+        }
+    
+        // Funciones y variables específicas para Financial Evaluation
+        var colors = ['#ff6b6b', '#6bd4ff', '#ffb677', '#b6a4ff', '#ffcc5c', '#5cdb95', '#98afff', '#ff85a2', '#93e5ab'];
+    
+        var chartData1 = {
+            labels: [],
+            datasets: [{
+                data: [],
+                backgroundColor: []
+            }]
+        };
+    
+        var ctx1 = document.getElementById('financialChartCanvas1').getContext('2d');
+        var financialChart1 = new Chart(ctx1, {
+            type: 'doughnut',
+            data: chartData1,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    
+        function addExpense(id) {
+            var expenseType = document.getElementById('expenseType1').value.trim();
+            var expenseAmount = parseFloat(document.getElementById('expenseAmount1').value) || 0;
+    
+            if (!expenseType) {
+                alert('Please enter a type of expense.');
+                return;
+            }
+    
+            if (expenseAmount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+    
+            var index = chartData1.labels.indexOf(expenseType);
+            if (index !== -1) {
+                chartData1.datasets[0].data[index] += expenseAmount;
+            } else {
+                chartData1.labels.push(expenseType);
+                chartData1.datasets[0].data.push(expenseAmount);
+                chartData1.datasets[0].backgroundColor.push(colors[chartData1.labels.length - 1]);
+            }
+    
+            financialChart1.update();
+        }
+    
+        function downloadFinancialChart(id) {
+            var link = document.createElement('a');
+            link.href = financialChart1.toBase64Image();
+            link.download = 'Financial_Evaluation_' + id + '.png';
+            link.click();
+        }
+    </script>
+
+</div>
+</div>
+
+
+
+<script>
+document.getElementById('toggleButton').addEventListener('click', function() {
+var content = document.querySelector('.container-3 .content');
+var button = document.getElementById('toggleButton');
+if (content.style.display === 'none') {
+  // Si el contenido está oculto, mostrarlo y cambiar el texto del botón a "Ocultar"
+  content.style.display = 'block';
+  button.textContent = 'hide';
+} else {
+  // Si el contenido está visible, ocultarlo y cambiar el texto del botón a "Mostrar"
+  content.style.display = 'none';
+  button.textContent = 'show';
+}
+});
+</script>
+  
     
                 </div>
               
+               
+                
+                <div class="featureA2">
+                    <h1 class="title7">Financial Processes</h1>
+                    <button id="toggleInvoiceButton" onclick="toggleInvoiceContent()">hide</button>
+                    <div id="invoiceContent" style="display: none;">
+                        <h1 class="title77">Invoice Management</h1>
+                        
+                        <form id="invoiceForm">
+                            <label for="invoiceNumber">Invoice Number:</label>
+                            <input type="text" id="invoiceNumber" required>
+                
+                            <label for="customerName">Customer name:</label>
+                            <input type="text" id="customerName" required>
+                
+                            <label for="invoiceDate">Invoice date:</label>
+                            <input type="date" id="invoiceDate" required>
+                
+                            <label for="dueDate">due date:</label>
+                            <input type="date" id="dueDate" required>
+                
+                            <label for="amount">Amount:</label>
+                            <input type="number" id="amount" min="0" step="0.01" required>
+                
+                            <label for="status">State:</label>
+                            <select id="status" required>
+                                <option value="slope">slope</option>
+                                <option value="paid">paid</option>
+                                <option value="Defeated">Defeated</option>
+                            </select>
+                
+                            <button type="submit">Save Invoice</button>
+                        </form>
+                
+                        <div id="invoiceDisplay" style="display: none;">
+                            <h2>Saved Invoice:</h2>
+                            <p><strong>Invoice Number:</strong> <span id="displayInvoiceNumber"></span></p>
+                            <p><strong>Customer name:</strong> <span id="displayCustomerName"></span></p>
+                            <p><strong>Invoice date:</strong> <span id="displayInvoiceDate"></span></p>
+                            <p><strong>Due date:</strong> <span id="displayDueDate"></span></p>
+                            <p><strong>Amount:</strong> <span id="displayAmount"></span></p>
+                            <p><strong>State:</strong> <span id="displayStatus"></span></p>
+                            <button id="downloadInvoiceButton">Download Invoice</button>
+                        </div>
+
+
+
+
+
+  <!--one more-->
+
+
+
+  <div class="containerA2">
+    <h1 class="title8">Bank Account Reconciliation</h1>
+    <form id="conciliationForm">
+        <label for="bankBalance">bank balance:</label>
+        <input type="number" id="bankBalance" placeholder="Enter bank balance" required>
+        
+        <label for="bookBalance">Book Balance:</label>
+        <input type="number" id="bookBalance" placeholder="Enter the book balance" required>
+        
+        <input type="submit" value="Reconcile">
+    </form>
+
+    <div class="result-box" id="resultBox"></div>
+
+
+
+    <!--otesk-->
+
+    <style>
+        .table-responsive {
+    overflow-x: auto;
+}
+
+#transactionTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Fija el ancho de las columnas */
+}
+
+#transactionTable th, #transactionTable td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap; /* Evita el salto de línea en el texto */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto es demasiado largo */
+}
+
+
+
+@media (max-width: 321px) {
+    /* Cambiar el display a flex para las filas de la tabla */
+    #transactionTable thead,
+    #transactionTable tbody,
+    #transactionTable tr,
+    #transactionTable th,
+    #transactionTable td {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Establecer el ancho de las columnas */
+    #transactionTable th,
+    #transactionTable td {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Reorganizar el orden de los elementos */
+    /* Date, Description */
+    #transactionTable th:nth-child(1),
+    #transactionTable td:nth-child(1) {
+        order: 1; /* Primero */
+    }
+    #transactionTable th:nth-child(2),
+    #transactionTable td:nth-child(2) {
+        order: 2; /* Segundo */
+    }
+
+    /* Amount */
+    #transactionTable th:nth-child(3),
+    #transactionTable td:nth-child(3) {
+        order: 3; /* Tercero */
+    }
+
+    /* Reconciled */
+    #transactionTable th:nth-child(4),
+    #transactionTable td:nth-child(4) {
+        order: 4; /* Cuarto */
+    }
+
+    /* Actions */
+    #transactionTable th:nth-child(5),
+    #transactionTable td:nth-child(5) {
+        order: 5; /* Quinto */
+    }
+
+    
+    #transactionTable th, #transactionTable td {
+        font-size: 12px; /* Redefine el tamaño de fuente en dispositivos pequeños */
+        padding: 6px;
+    }
+}
+    </style>
+
+    <h2>Transactions</h2>
+    <table id="transactionTable" style="max-width: 100%; box-sizing: border-box;">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Descripción</th>
+                <th>Amount</th>
+                <th>Reconciled</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="transactionBody">
+            <!-- Aquí se agregarán las transacciones dinámicamente -->
+        </tbody>
+    </table>
+    
+    <button class="add-btn" onclick="addTransaction()">Add Transaction</button>
+    <button onclick="downloadTable()">Download Table</button>
+    </div>
+
+<script>
+    document.getElementById('conciliationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Obtenemos los valores del formulario
+        var bankBalance = parseFloat(document.getElementById('bankBalance').value);
+        var bookBalance = parseFloat(document.getElementById('bookBalance').value);
+        
+        // Realizamos la conciliación
+        var difference = bankBalance - bookBalance;
+        
+        // Mostramos el resultado en la caja
+        var resultBox = document.getElementById('resultBox');
+        resultBox.innerHTML = '<h2>Resultado de la Conciliación</h2>';
+        if (difference === 0) {
+            resultBox.innerHTML += '<p>The balances match. There are no differences.</p>';
+        } else {
+            resultBox.innerHTML += '<p>The balances do not match. The difference is: ' + difference.toFixed(2) + '</p>';
+        }
+    });
+
+    // Función para agregar transacciones
+    function addTransaction() {
+        var tableBody = document.getElementById('transactionBody');
+        var newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td><input type="text" placeholder="Enter the date"></td>
+            <td><input type="text" placeholder="Enter description"></td>
+            <td><input type="number" placeholder="Enter the amount"></td>
+            <td class="transaction"><input type="checkbox"></td>
+            <td><button class="edit-btn">Edit</button><button class="save-btn" style="display: none;">save</button></td>
+        `;
+        tableBody.appendChild(newRow);
+    }
+
+    // Ejemplo de transacciones (puedes cargar estas transacciones desde una base de datos)
+    addTransaction(); // Agregar una fila inicial
+
+    // Función para descargar la tabla
+    function downloadTable() {
+        var table = document.getElementById('transactionTable');
+        var html = table.outerHTML;
+        var url = 'data:application/vnd.ms-excel,' + escape(html);
+        var link = document.createElement('a');
+        link.download = 'transaction_table.xls';
+        link.href = url;
+        link.click();
+    }
+
+    // Función para editar una fila de la tabla
+    document.getElementById('transactionTable').addEventListener('click', function(event) {
+        var target = event.target;
+        if (target.classList.contains('edit-btn')) {
+            var row = target.closest('tr');
+            var cells = row.querySelectorAll('td');
+
+            cells.forEach(function(cell, index) {
+                if (index !== cells.length - 1) {
+                    var text = cell.textContent;
+                    cell.innerHTML = `<input type="text" value="${text}">`;
+                }
+            });
+
+            target.style.display = 'none';
+            row.querySelector('.save-btn').style.display = 'inline';
+        } else if (target.classList.contains('save-btn')) {
+            var row = target.closest('tr');
+            var cells = row.querySelectorAll('td');
+
+            cells.forEach(function(cell, index) {
+                if (index !== cells.length - 1) {
+                    var input = cell.querySelector('input');
+                    cell.textContent = input.value;
+                }
+            });
+
+            target.style.display = 'none';
+            row.querySelector('.edit-btn').style.display = 'inline';
+        }
+    });
+</script>
+
+
+
+
+<!--two more-->
+<style>
+/* Estilos para los encabezados */
+
+/* Estilos para los encabezados */
+.title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #666;
+}
+
+/* Estilos para los formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+
+
+
+
+/* Estilos para la lista de gastos */
+#expenseHistory {
+    list-style-type: none;
+    padding: 0;
+}
+
+#expenseHistory li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+#expenseHistory li:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para los totales de gastos */
+#totalExpenses,
+#budget {
+    font-weight: bold;
+}
+
+/* Estilos para los mensajes de alerta */
+.alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="containerA2">
+        <h1 class="title9">Costs and Budgets</h1>
+
+        <div id="budgetSection">
+            <h2>Available Budget: <input type="number" id="inputBudget" value="1500.00"></h2>
+           
+            <div id="editBudgetForm" style="display: none;">
+                <label class="form-label" for="newBudget">New budget:</label>
+                <input class="form-input" type="number" id="newBudget" min="0" step="0.01" required>
+                <button class="btn" id="confirmBudgetBtn">Confirm</button>
+            </div>
+        </div>
+
+        <form class="form-group" id="expenseForm">
+            <label class="form-label" for="expenseName">Expense Name:</label>
+            <input class="form-input" type="text" id="expenseName" required>
+    
+            <label class="form-label" for="expenseCategory">Expense type:</label>
+            <input class="form-input" type="text" id="expenseCategory" required>
+    
+            <label class="form-label" for="expenseAmount">Amount of expense:</label>
+            <input class="form-input" type="number" id="expenseAmount" min="0" step="0.01" required>
+    
+            <button class="btn4" type="submit">Save Expense</button>
+        </form>
+        <h2>Total Costs</h2>
+        <p>Total expenditures: <span id="totalExpenses">0.00</span></p>
+        <p>Available Budget: <span id="budget">1500.00</span></p>
+    
+        <h2>Expense History</h2>
+        <ul id="expenseHistory"></ul>
+    
+        <script>
+            // Variables para el seguimiento de gastos y presupuesto
+            var totalExpenses = 0;
+            var initialBudget = 1500; // Presupuesto inicial
+            var remainingBudget = initialBudget;
+            var expenseHistory = [];
+    
+            // Función para actualizar el total de gastos y presupuesto disponible
+            function updateCostsAndBudget() {
+                document.getElementById("totalExpenses").textContent = totalExpenses.toFixed(2);
+                document.getElementById("budget").textContent = remainingBudget.toFixed(2);
+            }
+    
+            // Función para mostrar el historial de gastos
+            function showExpenseHistory() {
+                var expenseList = document.getElementById("expenseHistory");
+                expenseList.innerHTML = "";
+                expenseHistory.forEach(function(expense) {
+                    var listItem = document.createElement("li");
+                    listItem.textContent = `${expense.name}: $${expense.amount.toFixed(2)} (${expense.category})`;
+                    expenseList.appendChild(listItem);
+                });
+            }
+    
+            // Evento de envío del formulario de gastos
+            document.getElementById("expenseForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita el envío del formulario
+    
+                // Obtener los valores del formulario
+                var expenseName = document.getElementById("expenseName").value;
+                var expenseAmount = parseFloat(document.getElementById("expenseAmount").value);
+                var expenseCategory = document.getElementById("expenseCategory").value;
+    
+                // Actualizar el total de gastos
+                totalExpenses += expenseAmount;
+    
+                // Actualizar el presupuesto restante
+                remainingBudget = initialBudget - totalExpenses;
+    
+                // Registrar el gasto en el historial
+                expenseHistory.push({ name: expenseName, amount: expenseAmount, category: expenseCategory });
+    
+                // Limpiar los campos del formulario
+                document.getElementById("expenseName").value = "";
+                document.getElementById("expenseAmount").value = "";
+                document.getElementById("expenseCategory").value = "";
+    
+                // Actualizar la visualización de los costos y el presupuesto
+                updateCostsAndBudget();
+    
+                // Mostrar el historial actualizado de gastos
+                showExpenseHistory();
+            });
+    
+            // Evento de clic en "Editar Presupuesto"
+            document.getElementById("editBudgetBtn").addEventListener("click", function() {
+                document.getElementById("inputBudget").style.display = "inline-block";
+                document.getElementById("inputBudget").value = initialBudget.toFixed(2);
+                document.getElementById("editBudgetBtn").style.display = "none";
+            });
+    
+            // Evento de cambio en el input de presupuesto
+            document.getElementById("inputBudget").addEventListener("input", function() {
+                var newBudget = parseFloat(this.value);
+                if (!isNaN(newBudget) && newBudget >= 0) {
+                    initialBudget = newBudget;
+                    remainingBudget = initialBudget - totalExpenses;
+                    updateCostsAndBudget();
+                } else {
+                    alert("Please enter a valid quote.");
+                }
+            });
+    
+            // Inicializar la visualización de los costos y el presupuesto
+            updateCostsAndBudget();
+        </script>
+    </div>
+
+
+
+                    </div>
+
+
+
+
+                  
+
+                
+                    <script>
+                        function toggleInvoiceContent() {
+                            var content = document.getElementById("invoiceContent");
+                            if (content.style.display === "none") {
+                                content.style.display = "block";
+                                document.getElementById("toggleInvoiceButton").textContent = "hide";
+                            } else {
+                                content.style.display = "none";
+                                document.getElementById("toggleInvoiceButton").textContent = "show";
+                            }
+                        }
+                
+                        document.getElementById('invoiceForm').addEventListener('submit', function(event) {
+                            event.preventDefault();
+                
+                            var invoiceNumber = document.getElementById('invoiceNumber').value;
+                            var customerName = document.getElementById('customerName').value;
+                            var invoiceDate = document.getElementById('invoiceDate').value;
+                            var dueDate = document.getElementById('dueDate').value;
+                            var amount = document.getElementById('amount').value;
+                            var status = document.getElementById('status').value;
+                
+                            document.getElementById('displayInvoiceNumber').innerText = invoiceNumber;
+                            document.getElementById('displayCustomerName').innerText = customerName;
+                            document.getElementById('displayInvoiceDate').innerText = invoiceDate;
+                            document.getElementById('displayDueDate').innerText = dueDate;
+                            document.getElementById('displayAmount').innerText = amount;
+                            document.getElementById('displayStatus').innerText = status;
+                
+                            document.getElementById('invoiceDisplay').style.display = 'block';
+                
+                            this.reset();
+                        });
+                
+                        document.getElementById('downloadInvoiceButton').addEventListener('click', function() {
+                            var invoiceNumber = document.getElementById('displayInvoiceNumber').innerText;
+                            var customerName = document.getElementById('displayCustomerName').innerText;
+                            var invoiceDate = document.getElementById('displayInvoiceDate').innerText;
+                            var dueDate = document.getElementById('displayDueDate').innerText;
+                            var amount = document.getElementById('displayAmount').innerText;
+                            var status = document.getElementById('displayStatus').innerText;
+                
+                            var invoiceContent = `Número de Factura: ${invoiceNumber}\n`;
+                            invoiceContent += `Nombre del Cliente: ${customerName}\n`;
+                            invoiceContent += `Fecha de Factura: ${invoiceDate}\n`;
+                            invoiceContent += `Fecha de Vencimiento: ${dueDate}\n`;
+                            invoiceContent += `Monto: ${amount}\n`;
+                            invoiceContent += `Estado: ${status}`;
+                
+                            var downloadLink = document.createElement('a');
+                            downloadLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(invoiceContent);
+                            downloadLink.download = 'invoice.txt';
+                            downloadLink.click();
+                        });
+                    </script>
+
+
+
+
+
+                </div>
+                
+                
+                
+
 
 
 
@@ -977,6 +1817,20 @@ updateChart();
             
         </div>
     </section>
+
+
+    
+
+    <!--CALCULATOR FINANCE-->
+
+  
+    
+
+
+
+<!--END -->
+
+
 
       
       
