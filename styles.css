@@ -24,7 +24,7 @@ header {
   
    
     padding: 20px 0;
-    background-image: url(./Blue\ And\ Violet\ Modern\ New\ Product\ Facebook\ Post.png);
+    background-image: url(/Blue\ And\ Violet\ Modern\ New\ Product\ Facebook\ Post.png);
     color: rgb(240, 240, 240);
     text-align: left;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -88,6 +88,37 @@ button {
 }
 
 
+
+
+.container-3 {
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    text-align: center;
+   background-color: white;
+    border: 2px solid #044dd4;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+
+.container-3 {
+    max-width: 800px;
+    margin: auto;
+    background: rgb(0, 0, 0);
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.container-32 {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
+    padding: 20px; /* Relleno interior del contenedor */
+    background-color: #ffffff; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Borde redondeado del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+}
 /* cookies */
 
 
@@ -241,37 +272,15 @@ header nav ul li a:hover {
 
 
 
-.container-3 {
-    text-align: center;
-    margin-top: 20px;
-}
+/* Estilos para el contenedor "container-3" */
+/* Estilos para el contenedor "container-3" --------------------------------------------------------------------------------------------*/
 
-/* Estilos para pantallas más pequeñas */
-@media screen and (max-width: 600px) {
+
+/* Media query para pantallas de 321px o menos */
+@media screen and (max-width: 321px) {
     .container-3 {
-        padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+        width: 100%; /* Establece el ancho al 100% */
     }
-
-    /* Ajusta el tamaño del botón */
-    button {
-
-        padding: 10px 20px; /* Ajusta el padding para controlar el tamaño del botón */
-    font-size: 16px; /* Tamaño del texto */
-    border: 2px solid #000000; /* Grosor y color del borde */
-    border-radius: 5px; /* Borde redondeado */
-    background-color: #ffffff; /* Color de fondo */
-    color: #000000; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-
-                                            /*****************************/
-    }
-}
-
-#content-3 {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 
@@ -292,14 +301,7 @@ header nav ul li a:hover {
 }
 
 
-.container-3 {
-    max-width: 800px;
-    margin: auto;
-    background: rgb(0, 0, 0);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+/*--------------------------------------------------------------------------------------------------------------------------------*/
 
 #content {
     background-color: #ffffff;
@@ -563,18 +565,22 @@ header nav ul li a:hover {
 
 
 .feature {
-   background-color: #ffffff;
-   opacity: 1.5;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px Xpx;
-
-    margin: 20px 10px; /* Esto añade un margen superior e inferior de 20px y un margen derecho e izquierdo de 10px */
-    transition: transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #303030;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 
-
+/* Media query para pantallas de 321px o menos */
+@media screen and (max-width: 321px) {
+    .container-3 {
+        width: 100%; /* Establece el ancho al 100% */
+    }
+}
 
 
 /*CONTENIDO ANALITYCS*/
@@ -792,27 +798,43 @@ textarea {
     border-radius: 8px;
 }
 
+/* Estilos para el input de texto */
 input[type="text"] {
     padding: 10px;
     margin-top: 10px;
     border-radius: 4px;
     border: 1px solid #000000;
-    width: calc(100% - 24px);
+    width: calc(100% - 24px); /* Calcula el ancho del input para que se ajuste al contenedor */
 }
 
+/* Estilos para el input de progreso */
 #progressInput {
     width: 100%; /* Establece el ancho al 100% del contenedor */
     max-width: 300px; /* Establece un ancho máximo para evitar que el control se vuelva demasiado grande en pantallas grandes */
     margin: 0 auto; /* Centra el control en el contenedor */
 }
 
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .widget-container {
+        padding: 15px; /* Ajusta el relleno del contenedor en pantallas pequeñas */
+    }
 
-
-
-button:hover {
-    background-color: #0056b3;
+    input[type="text"] {
+        width: calc(100% - 20px); /* Ajusta el ancho del input en pantallas pequeñas */
+    }
 }
 
+/* Media query para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    .widget-container {
+        padding: 10px; /* Ajusta el relleno del contenedor en pantallas muy pequeñas */
+    }
+
+    input[type="text"] {
+        width: calc(100% - 10px); /* Ajusta el ancho del input en pantallas muy pequeñas */
+    }
+}
 
 
 
@@ -967,14 +989,7 @@ p {
 
 
   /* Estilos para el contenedor */
-  .container-3 {
-    max-width: 800px; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
-    padding: 20px; /* Relleno interior del contenedor */
-    background-color: #ffffff; /* Color de fondo del contenedor */
-    border-radius: 10px; /* Borde redondeado del contenedor */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
-}
+ /*-----------------------------------------------------------------------------------------------------------*/
 
 /*ESTRATEGY*/
 .title4 {
@@ -1026,12 +1041,7 @@ p {
 
 
 /*calculator*/
-#calculator {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
 .ctext {
     text-align: center;
@@ -1042,15 +1052,6 @@ p {
 
 label {
     font-weight: bold;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
 
 button {
@@ -1071,10 +1072,7 @@ button:hover {
     margin-top: 20px;
 }
 
-p {
-    margin: 5px 0;
-    font-size: 20px;
-}
+
 
 span {
     font-weight: bold;
@@ -1083,10 +1081,6 @@ span {
 
 
 /*calculator p*/
-
-
-
-
 
 
 
@@ -1108,18 +1102,16 @@ span {
     width: 100%;
 }
 
+
+
+
+
 label {
     display: block;
     margin-top: 10px;
     color: #666;
 }
-input[type="number"] {
-    width: 100px;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+
 button {
     padding: 10px 20px;
     margin-top: 20px;
@@ -1144,12 +1136,295 @@ button:hover {
 
 
 
+  /* Estilos generales calculator end */
+           
+    
+.two {
+    background-image: url(./DALL·E\ 2024-03-30\ 16.01.10\ -\ fondo\ oscuro\ con\ graficas\ de\ calculo\ y\ estadistica\ en\ donde\ hay\ pequeños\ detalles\ de\ color\ azul\ y\ morado\ .png);
+    border-radius: 10px;
+}
+
+
+
+  .title6 {
+    background-image: url(./DALL·E\ 2024-03-30\ 09.28.14\ -\ wallpaper\ de\ una\ nebulosa\ oscura\ con\ pequeños\ detalles\ color\ morado\ y\ algunos\ números\ y\ conceptos\ matemáticos\ .png);
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+.section {
+    overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si el contenido se desborda */
+}
+
+#amortizationSchedule table {
+    width: 100%; /* La tabla ocupará el 100% del contenedor */
+    border-collapse: collapse; /* Fusiona los bordes de las celdas */
+}
+
+#amortizationSchedule th, #amortizationSchedule td {
+    padding: 8px; /* Añade espacio interno a las celdas */
+    border: 1px solid #ddd; /* Añade un borde a las celdas */
+    text-align: center; /* Centra el texto dentro de las celdas */
+}
+
+#amortizationSchedule th {
+    background-color: #002cee; /* Color de fondo para las celdas de encabezado */
+}
+
+#amortizationSchedule td:last-child {
+    text-align: right; /* Alinea el texto a la derecha en la última columna */
+}
+        .section-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+       
+ /* Estilos CSS adicionales pueden ser agregados aquí */
+ .chart-container {
+        position: relative;
+        margin: auto;
+        height: 400px; /* Ajusta la altura según tus necesidades */
+        width: 80%; /* Ajusta el ancho según tus necesidades */
+    }
+        /* Estilos para gráficos */
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+/*more tools */
 
 
 
 
+/* Estilos para encabezados */
 
 
+/* Estilos para enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para botones */
+button, .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+button:hover, .button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para formularios */
+input[type="text1"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Media query para ajustar la tabla en pantallas pequeñas */
+@media (max-width: 321px) {
+    table {
+        overflow-x: auto;
+    }
+}
+/* Otros estilos */
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+.title7 {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+
+.title77 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: black;
+}
+
+.title8 {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+   
+border: 5px solid #fff;
+
+
+}
+
+
+
+.title9 {
+    font-size: 30px;
+   
+    
+ color: #333;
+ text-align: center;
+ border: 5px solid #fff;
+
+
+ 
+}
+
+.featureA2 {
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #303030;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.containerA2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ /* Estilo general para la tabla */
+ table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para las acciones */
+.actions {
+    white-space: nowrap;
+}
+
+/* Estilo para botones en la acción */
+.actions button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilo para hacer la tabla scroll horizontalmente en dispositivos pequeños */
+@media only screen and (max-width: 321px) {
+    table {
+        overflow-x: auto;
+    }
+}
+
+
+.featureA2 {
+    border-bottom: 2px solid #000000; /* Agrega un borde inferior de 2px sólido gris a la primera parte */
+    box-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px rgba(200, 200, 200, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(200, 200, 200, 0.8),
+    0 0 55px rgba(255, 255, 255, 0.8),
+    0 0 70px rgba(200, 200, 200, 0.8);
+    padding-bottom: 20px; /* Opcional: Agrega un relleno inferior para espacio adicional */
+}
+
+.containerA2 {
+    border-top: 2px solid #000000; /* Agrega un borde superior de 2px sólido gris a la segunda parte */
+    box-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px rgba(200, 200, 200, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(200, 200, 200, 0.8),
+    0 0 55px rgba(255, 255, 255, 0.8),
+    0 0 70px rgba(200, 200, 200, 0.8);
+    padding-top: 20px; /* Opcional: Agrega un relleno superior para espacio adicional */
+}
 
 
 #join {
@@ -1160,6 +1435,14 @@ button:hover {
     color: rgb(255, 255, 255);
     padding: 100px 0;
     text-align: center;
+    text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #0400ff,
+    0 0 30px #0400ff,
+    0 0 40px #0400ff,
+    0 0 55px #0400ff,
+    0 0 70px #0400ff;
     
 }
 
@@ -1339,6 +1622,7 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
+   
 
     
         
